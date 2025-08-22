@@ -40,7 +40,8 @@
 
   <body>
     <!-- Circle that follows cursor -->
-    <div class="cursor-circle" id="cursorCircle"></div>
+    <!-- <div class="cursor-circle" id="cursorCircle"></div> -->
+    <div id="trailContainer"></div>
 
     <!-- ECG background canvas -->
     <canvas id="ecg-bg-canvas"></canvas>
@@ -88,17 +89,30 @@
       </div>
     </div>
 
-    <div class="features-area default-padding-bottom" style="margin-top: -36px">
+    <div class="features-area default-padding-bottom mx-5">
       <div class="container">
         <div class="features-items">
           <div class="feature-box text-center">
             <div class="d-flex justify-content-between">
-              <h2>Our Services</h2>
-              <button
-                class="btn-primary text-white px-4 border-0 rounded-3 fs-6 fw-semibold cursor-pointer"
-              >
-                Get Started
-              </button>
+              <h3>Our Services</h3>
+              <a href="/services.html" style="text-decoration: none">
+                <button
+                  class="btn-primary"
+                  style="
+                    color: white;
+                    padding: 12px 28px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                  "
+                >
+                  Get Started
+                </button>
+              </a>
             </div>
             <!-- Swiper Slider Start -->
             <div class="swiper myFeatureSwiper">
@@ -288,14 +302,13 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Swiper Navigation and Pagination -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
             </div>
             <!-- Swiper Slider End -->
           </div>
+          <!-- Swiper Navigation and Pagination -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
@@ -583,8 +596,8 @@
 
     <!-- Clients -->
     <div
-      class="clients-area text-light bg-gradient default-padding-mx"
-      style="top: 20px; position: relative; overflow: hidden"
+      class="clients-area text-light bg-gradient"
+      style="top: 20px; position: relative; overflow: hidden; padding: 50px"
     >
       <style>
         /* Fade-in + slide up animation */
@@ -715,7 +728,7 @@
           <div class="col-lg-5 info">
             <h2
               class="typing-text"
-              data-text="We've Worked With , Now Trust Each Other"
+              data-text="Great Work Turn Into Great Trust."
             >
               <span class="typing-cursor"></span>
             </h2>
@@ -723,7 +736,11 @@
           <div class="col-lg-7">
             <div class="clients-carousel owl-carousel owl-theme">
               <div class="item">
-                <img src="assets/img/logo2.svg" alt="Thumb" />
+                <img
+                  src="assets/img/logo2.svg"
+                  alt="Thumb"
+                  style="width: 400px; height: 150px"
+                />
               </div>
               <div class="item">
                 <img
@@ -759,7 +776,7 @@
       "
     >
       <h2 style="text-align: center; margin-bottom: 30px">
-        What Our Clients Say
+        What Our <span class="gradient-text">Clients</span> Say
       </h2>
       <div
         style="
@@ -889,7 +906,8 @@
             <div class="site-heading text-center" style="margin-bottom: 20px">
               <h5 style="margin-bottom: 5px">Latest News</h5>
               <h2 style="margin-bottom: 10px">
-                Stay Updated with Netpulse Digital <br />
+                Stay <span class="gradient-text">Updated</span> with
+                <span class="gradient-text">Netpulse Digital</span> <br />
                 Latest & Popular Insights
               </h2>
               <div class="heading-divider" style="margin: 0 auto 10px"></div>
@@ -1178,6 +1196,7 @@
     <script src="assets/js/validnavs.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="assets/js/cursor-circle.js"></script>
+    <!-- <script src="assets/js/cursor-circle.js"></script> -->
+    <script src="assets/js/ink-trail-cursor.js"></script>
   </body>
 </html>

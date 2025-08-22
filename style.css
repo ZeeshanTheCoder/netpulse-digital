@@ -74,8 +74,8 @@ Table of contents
   --color-style-two: #1aa79d;
   --color-style-three: #08736b;
   --color-style-four: #fe551f;
-  --color-style-five: #D8A411;
-  --color-style-six: #E8587F;
+  --color-style-five: #d8a411;
+  --color-style-six: #e8587f;
   --color-heading: #232323;
   --color-paragraph: #666666;
   --border-default: #e7e7e7;
@@ -401,7 +401,7 @@ p {
 }
 
 /* Circle that follows cursor  */
-.cursor-circle {
+/* .cursor-circle {
   position: fixed;
   width: 15px;
   height: 15px;
@@ -410,7 +410,25 @@ p {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
+} */
+
+#trailContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
 }
+
+.trail-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #00C9FF, #4154F1);
+  filter: blur(2px);
+  opacity: 0.8;
+} 
 
 @media (min-width: 576px) {
   .container-medium {
@@ -5993,6 +6011,11 @@ i.fas.fa-envelope-open {
   border-radius: 10px;
 }
 
+.blog-area .item:hover .thumb a {
+  display: block;
+  padding-top: 5px;
+}
+
 .blog-items .item .info {
   padding: 30px;
   background: var(--white);
@@ -7444,4 +7467,14 @@ footer .footer-bottom .text-end li {
   html {
     overflow-x: hidden;
   }
+}
+
+/* * gradient color */
+
+.gradient-text {
+  background: linear-gradient(135deg, #4154f1, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+  color: transparent;
 }

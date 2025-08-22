@@ -132,7 +132,8 @@
 
   <body>
     <!-- Circle that follows cursor -->
-    <div class="cursor-circle" id="cursorCircle"></div>
+    <!-- <div class="cursor-circle" id="cursorCircle"></div> -->
+    <div id="trailContainer"></div>
 
     <!-- Header -->
     <header id="header"></header>
@@ -165,7 +166,7 @@
               data-wow-duration="1s"
               data-wow-delay="0.5s"
               style="
-                color: #fff;
+                color: #333;
                 font-size: 1.1rem;
                 line-height: 1.2;
                 font-size: 17px;
@@ -312,80 +313,105 @@
           data-wow-duration="1s"
         />
       </div>
-      <div class="container">
-        <div
-          class="services-items wow animate__fadeInUp services-carousel owl-carousel owl-theme"
-          data-wow-duration="1s"
-          data-wow-delay="0.3s"
-        >
-          <!-- Digital Marketing -->
-          <div
-            class="item wow animate__animated animate__zoomIn animate__delay-1s"
-            data-wow-duration="1s"
-            data-wow-delay="0.2s"
-          >
-            <div class="icon"><i class="flaticon-bullhorn"></i></div>
-            <div class="info">
-              <h4><a href="#" style="color: #4154f1">Digital Marketing</a></h4>
-              <p>
-                We deliver comprehensive digital marketing strategies including
-                SEO, PPC, and social media marketing to enhance your online
-                presence and drive growth.
-              </p>
-            </div>
-          </div>
-
-          <!-- Creative Designing -->
-          <div
-            class="item wow animate__animated animate__flipInY animate__delay-2s"
-            data-wow-duration="1s"
-            data-wow-delay="0.4s"
-          >
-            <div class="icon"><i class="fas fa-paint-brush"></i></div>
-            <div class="info">
-              <h4><a href="#" style="color: #4154f1">Creative Designing</a></h4>
-              <p>
-                Our creative design team crafts compelling, brand-aligned
-                visuals and user experiences that engage your audience and
-                elevate your brand identity.
-              </p>
-            </div>
-          </div>
-
-          <!-- Web Development -->
-          <div
-            class="item wow animate__animated animate__fadeInRightBig animate__delay-3s"
-            data-wow-duration="1s"
-            data-wow-delay="0.6s"
-          >
-            <div class="icon"><i class="fas fa-code"></i></div>
-            <div class="info">
-              <h4><a href="#" style="color: #4154f1">Web Development</a></h4>
-              <p>
-                We build fast, responsive, and scalable websites tailored to
-                your business needs, ensuring seamless functionality and optimal
-                user experience.
-              </p>
-            </div>
-          </div>
-
-          <!-- SEO -->
-          <div
-            class="item wow animate__animated animate__lightSpeedInRight animate__delay-4s"
-            data-wow-duration="1s"
-            data-wow-delay="0.8s"
-          >
-            <div class="icon"><i class="flaticon-keyword-1"></i></div>
-            <div class="info">
-              <h4><a href="#" style="color: #4154f1">SEO</a></h4>
-              <p>
-                Increase your website’s visibility and attract qualified traffic
-                with our effective search engine optimization techniques.
-              </p>
-            </div>
-          </div>
-        </div>
+     <div class="container">
+  <div
+    class="services-items wow animate__fadeInUp services-carousel owl-carousel owl-theme"
+    data-wow-duration="1s"
+    data-wow-delay="0.3s"
+  >
+    <!-- Digital Marketing -->
+    <div
+      class="item wow animate__animated animate__zoomIn animate__delay-1s"
+      data-wow-duration="1s"
+      data-wow-delay="0.2s"
+    >
+      <div class="icon"><i class="fas fa-bullhorn"></i></div>
+      <div class="info">
+        <h4><a href="/DigitalMarketing.html" style="color: #4154f1">Digital Marketing</a></h4>
+        <p>
+          We offer effective digital marketing strategies that are driven by results — including SEO and social media
+        </p>
+        <!-- Add button if you want like on home page, otherwise remove -->
       </div>
+    </div>
+
+    <!-- Creative Designing -->
+    <div
+      class="item wow animate__animated animate__flipInY animate__delay-2s"
+      data-wow-duration="1s"
+      data-wow-delay="0.4s"
+    >
+      <div class="icon"><i class="fas fa-paint-brush"></i></div>
+      <div class="info">
+        <h4><a href="/Design.html" style="color: #4154f1">Creative Design</a></h4>
+        <p>
+          Our design team creates stunning and user-friendly design concepts that help bring your brand's message to life...
+        </p>
+      </div>
+    </div>
+
+    <!-- Web Development -->
+    <div
+      class="item wow animate__animated animate__fadeInRightBig animate__delay-3s"
+      data-wow-duration="1s"
+      data-wow-delay="0.6s"
+    >
+      <div class="icon"><i class="fas fa-code"></i></div>
+      <div class="info">
+        <h4><a href="/Web.html" style="color: #4154f1">Web Development</a></h4>
+        <p>
+          Our web development team creates quick, mobile-responsive, and flexible websites tailored to your company's objectives...
+        </p>
+      </div>
+    </div>
+
+    <!-- AI Automation -->
+    <div
+      class="item wow animate__animated animate__lightSpeedInRight animate__delay-4s"
+      data-wow-duration="1s"
+      data-wow-delay="0.8s"
+    >
+      <div class="icon"><i class="fas fa-robot"></i></div>
+      <div class="info">
+        <h4><a href="/AIAutomation.html" style="color: #4154f1">AI Automation</a></h4>
+        <p>
+          Streamline your business operations with smart AI automation tools designed to boost efficiency and accuracy.
+        </p>
+      </div>
+    </div>
+
+    <!-- E-Books -->
+    <div
+      class="item wow animate__animated animate__fadeInRightBig animate__delay-5s"
+      data-wow-duration="1s"
+      data-wow-delay="1s"
+    >
+      <div class="icon"><i class="fas fa-book"></i></div>
+      <div class="info">
+        <h4><a href="/EBooks.html" style="color: #4154f1">E-Books</a></h4>
+        <p>
+          Discover our professionally crafted e-books that deliver valuable insights and practical guidance for all readers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mobile Application Development -->
+    <div
+      class="item wow animate__animated animate__fadeInRightBig animate__delay-6s"
+      data-wow-duration="1s"
+      data-wow-delay="1.2s"
+    >
+      <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+      <div class="info">
+        <h4><a href="/MobileApp.html" style="color: #4154f1">Mobile Application Development</a></h4>
+        <p>
+          We build powerful mobile app with intuitive interfaces for both Android and iOS platforms.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 
     <!-- End Services Area -->
@@ -462,7 +488,7 @@
             <img src="assets/img/illustration/7.png" alt="Thumb" />
           </div>
           <div class="col-lg-6 info wow fadeInUp" data-wow-delay="0.5s">
-            <h2 class="animated-gradient-text" style="font-size: 30px;">
+            <h2 class="animated-gradient-text" style="font-size: 30px">
               At Netpulse Digital, we specialize in
               <strong>innovative digital solutions!</strong>
             </h2>
@@ -516,6 +542,15 @@
       "
     >
       <div class="container" style="max-width: 1100px; margin: auto">
+        <h2
+          style="
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+          "
+        >
+          Our <span class="gradient-text">Testimonails</span>
+        </h2>
         <div class="testimonial-items">
           <div
             class="row align-center"
@@ -746,7 +781,8 @@
     <script src="assets/js/validnavs.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="assets/js/cursor-circle.js"></script>
+    <!-- <script src="assets/js/cursor-circle.js"></script> -->
+    <script src="assets/js/ink-trail-cursor.js"></script>
 
     <script>
       // Initialize WOW.js for scroll animations

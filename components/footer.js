@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
 
-      <div class="footer-bottom">
+      <div class="footer-bottom pb-2">
         <div>&copy; 2025 Netpulse Digital. All rights reserved.</div>
         <div>
           <a>Terms</a>

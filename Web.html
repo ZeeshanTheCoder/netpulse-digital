@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Netpulse Digitals" />
+    <title>Netpulse Digital</title>
+    <link rel="shortcut icon" href="assets/img/net.jpg" type="image/x-icon" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/validnavs.css" rel="stylesheet" />
+    <link href="assets/css/helper.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="custom-styles.css" rel="stylesheet" />
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Circle that follows cursor -->
+    <div class="cursor-circle" id="cursorCircle"></div>
+
+    <!-- ECG background canvas -->
+    <canvas id="ecg-bg-canvas"></canvas>
+
+    <!-- Additional ECG line canvases -->
+    <canvas class="ecg-line-canvas" id="ecg-line-1"></canvas>
+    <canvas class="ecg-line-canvas" id="ecg-line-2"></canvas>
+    <canvas class="ecg-line-canvas" id="ecg-line-3"></canvas>
+
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Banner -->
+    <div class="banner-area with-fixed-nav" style="padding: -80px -10px">
+      <div class="shape-right-bottom shape opacity-default">
+        <img src="assets/img/shape/13.png" alt="Shape" />
+      </div>
+
+      <div class="container">
+        <div class="double-items">
+          <div class="row align-center">
+            <div class="col-lg-6 info">
+              <h2
+                id="typewriter"
+                class="wow fadeInDown"
+                data-wow-duration="1s"
+                style="font-size: 55px"
+              ></h2>
+              <p
+                class="wow fadeInLeft"
+                data-wow-duration="1.5s"
+                style="font-size: 16px; line-height: 1.2"
+              >
+                From sleek, user-friendly web design to seamless and robust web
+                development, Netpulse Digital crafts custom solutions that
+                perfectly fit your business goals. We build fast, responsive,
+                and scalable platforms that provide excellent user experiences
+                and drive meaningful engagement to help your business grow.
+              </p>
+            </div>
+            <div class="col-lg-6 thumb wow fadeInRight" data-wow-duration="1s">
+              <img src="assets/img/illustration/web.png" alt="Thumb" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-area default-padding-bottom" style="margin-top: -36px">
+      <div class="shape-left-top shape opacity-01">
+        <img src="assets/img/shape/4.png" alt="Shape" />
+      </div>
+
+      <!-- What is Web Development? -->
+      <div class="container">
+        <div class="features-items">
+          <div class="feature-box text-center">
+            <div class="row">
+              <div></div>
+              <div></div>
+              <div class="single-item">
+                <div class="item d-flex">
+                  <div class="left-item">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h4>
+                      What is
+                      <span style="color: #4154f1">Web Development?</span>
+                    </h4>
+                    <p>
+                      Web development is the process of creating websites that
+                      are fast, mobile-friendly, and easy to use. From layout
+                      and design to functionality and coding, it’s what brings
+                      your online presence to life.
+                    </p>
+                  </div>
+                  <div class="right-item d-none d-md-block">
+                    <img
+                      class="rounded-3"
+                      src="assets/img/services/wd1.jpg"
+                      width="1000"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why is it Important? -->
+      <div class="container">
+        <div class="features-items">
+          <div class="feature-box text-center">
+            <div class="row">
+              <div class="single-item">
+                <div class="item d-flex">
+                  <div class="left-item d-none d-md-block">
+                    <img
+                      class="rounded-3"
+                      src="assets/img/services/wd2.jpg"
+                      width="1500"
+                      alt=""
+                    />
+                  </div>
+                  <div class="right-item">
+                    <h4 style="color: #4154f1">Why is it Important?</h4>
+                    <p class="px-0 px-sm-5">
+                      In today’s digital world, first impressions happen
+                      online—and your website is often the very first
+                      interaction potential customers have with your brand.
+                      Professional web development ensures your website loads
+                      quickly, looks great on all devices, and is easy for
+                      visitors to navigate. This seamless experience keeps users
+                      engaged, encourages them to explore your products or
+                      services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div
+      class="services-area carousel-shadow bg-gray default-padding"
+      style="margin-top: -30px"
+    >
+      <div class="shape-bottom">
+        <img src="assets/img/shape/1.svg" alt="Shape" />
+      </div>
+      <div class="ecg-scan-line" style="left: 30%; animation-delay: 1s"></div>
+      <div class="ecg-scan-line" style="left: 80%; animation-delay: 3s"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h5>What we Offer</h5>
+              <h2>Explore our cutting-edge <br />Web Development Services.</h2>
+              <div class="heading-divider"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="services-items wow fadeInUp services-carousel owl-carousel owl-theme"
+        >
+          <div class="item">
+            <div class="icon"><i class="flaticon-bullhorn"></i></div>
+            <div class="info">
+              <h4><a>Custom Website Development</a></h4>
+              <p>
+                We build responsive, user-friendly, and secure websites tailored
+                to meet your business goals using modern technologies...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-keyword-1"></i></div>
+            <div class="info">
+              <h4><a>E-Commerce Solutions</a></h4>
+              <p>
+                From small shops to enterprise-level platforms, we create
+                scalable e-commerce websites that boost sales and improve
+                customer experience...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-marketing"></i></div>
+            <div class="info">
+              <h4><a>Web App Development</a></h4>
+              <p>
+                Our team develops powerful, scalable web applications to
+                streamline your operations and deliver great user experiences...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-ppc"></i></div>
+            <div class="info">
+              <h4><a>CMS Development</a></h4>
+              <p>
+                We offer CMS solutions like WordPress, Joomla, and custom-built
+                platforms to give you full control over your content...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-competition"></i></div>
+            <div class="info">
+              <h4><a>Website Maintenance</a></h4>
+              <p>
+                Keep your website secure, up-to-date, and running smoothly with
+                our ongoing support and maintenance services...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div
+      class="our-process-area default-padding-bottom bottom-less"
+      style="margin-top: 30px"
+    >
+      <div class="container">
+        <h2 class="text-center">Why Choose Us?</h2>
+        <div class="process-box text-center">
+          <div class="row">
+            <div class="single-item col-lg-3 col-md-6">
+              <div class="item wow fadeInUp zoomIn" data-wow-delay="0.5s">
+                <div
+                  class="icon wow pulse"
+                  data-wow-iteration="infinite"
+                  data-wow-delay="0.5s"
+                >
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="wow fadeInDown" data-wow-delay="0.7s">
+                  Requirement Gathering
+                </h4>
+                <p class="wow fadeIn" data-wow-delay="0.9s">
+                  We begin by gathering all technical and design requirements to
+                  shape your ideal website.<
+                </p>
+              </div>
+            </div>
+            <div class="single-item col-lg-3 col-md-6">
+              <div class="item wow fadeInUp zoomIn" data-wow-delay="0.6s">
+                <div
+                  class="icon wow pulse"
+                  data-wow-iteration="infinite"
+                  data-wow-delay="0.6s"
+                >
+                  <i class="fas fa-hdd"></i>
+                </div>
+                <h4 class="wow fadeInDown" data-wow-delay="0.8s">
+                  UI/UX Design
+                </h4>
+                <p class="wow fadeIn" data-wow-delay="1s">
+                  Our team creates intuitive and modern interfaces for a smooth
+                  user experience.
+                </p>
+              </div>
+            </div>
+            <div class="single-item col-lg-3 col-md-6">
+              <div class="item wow fadeInUp zoomIn" data-wow-delay="0.7s">
+                <div
+                  class="icon wow pulse"
+                  data-wow-iteration="infinite"
+                  data-wow-delay="0.7s"
+                >
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <h4 class="wow fadeInDown" data-wow-delay="0.9s">
+                  Development
+                </h4>
+                <p class="wow fadeIn" data-wow-delay="1.1s">
+                  We code responsive, fast-loading websites using modern
+                  technologies.
+                </p>
+              </div>
+            </div>
+            <div class="single-item col-lg-3 col-md-6">
+              <div class="item wow fadeInUp zoomIn" data-wow-delay="0.8s">
+                <div
+                  class="icon wow pulse"
+                  data-wow-iteration="infinite"
+                  data-wow-delay="0.8s"
+                >
+                  <i class="fas fa-list-alt"></i>
+                </div>
+                <h4 class="wow fadeInDown" data-wow-delay="1s">
+                  Testing & Deployment
+                </h4>
+                <p class="wow fadeIn" data-wow-delay="1.2s">
+                  We test across devices & browsers, then launch your site with
+                  full optimization.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section
+      class="testimonial-section"
+      style="
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+        font-family: Arial, sans-serif;
+      "
+    >
+      <h2 style="text-align: center; margin-bottom: 30px">
+        What Our Clients Say
+      </h2>
+      <div
+        style="
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          flex-wrap: wrap;
+        "
+      >
+        <!-- Testimonial Card 1 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="User 1"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “Netpulse Digital transformed our web presence with exceptional
+            creativity and technical expertise. Highly recommended!”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Alice Johnson
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            Marketing Manager
+          </div>
+          <div style="color: #f5a623">★★★★★</div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/45.jpg"
+            alt="User 2"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “The team's innovative solutions boosted our engagement and brought
+            measurable growth. Smooth collaboration all the way.”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Michael Smith
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            CEO, Startup Inc.
+          </div>
+          <div style="color: #f5a623">★★★★☆</div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/22.jpg"
+            alt="User 3"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “A reliable partner with deep digital expertise. Their marketing
+            strategy really put us ahead in the market.”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Samantha Lee
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            Product Manager
+          </div>
+          <div style="color: #f5a623">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <!-- <div
+      class="blog-area default-padding bottom-less bg-gray"
+      style="margin-top: -30px; padding-top: 10px; padding-bottom: 20px"
+    >
+      <div
+        class="ecg-signal"
+        style="top: 20%; left: 0; animation-delay: 2s"
+      ></div>
+      <div
+        class="ecg-signal"
+        style="top: 80%; left: 0; animation-delay: 4s"
+      ></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center" style="margin-bottom: 20px">
+              <h5 style="margin-bottom: 5px">Latest News</h5>
+              <h2 style="margin-bottom: 10px">
+                Stay Updated with Netpulse Digital <br />
+                Latest & Popular Insights
+              </h2>
+              <div class="heading-divider" style="margin: 0 auto 10px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-items content-less" style="margin-top: 0">
+          <div class="row" style="margin-bottom: 0">
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="#"
+                    ><img
+                      src="assets/img/brandd.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="#" style="margin-right: 5px">Design</a
+                    ><a href="#">Branding</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 18 Nov, 2025</li>
+                      <li>By <a href="#">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="#"
+                      >Design Trends That Are Shaping the Future of Branding</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="#"
+                    ><img
+                      src="assets/img/programmer-night.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="#" style="margin-right: 5px">Web</a
+                    ><a href="#">Development</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li>
+                      <li>By <a href="#">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="#"
+                      >Why Responsive Web Development Matters More Than Ever</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="#"
+                    ><img
+                      src="assets/img/corporate-management-strategy-solution-branding-concept.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="#" style="margin-right: 5px">Marketing</a
+                    ><a href="#">Strategy</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li>
+                      <li>By <a href="#">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="#"
+                      >Proven Digital Marketing Strategies That Drive Results</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Internal Scripts -->
+    <script>
+      // ---------- TypeWriter ----------- //
+      const text = "Turn ideas into Powerful Websites with Netpulse Digital.";
+      const heading = document.getElementById("typewriter");
+      let index = 0;
+
+      function typeWriter() {
+        if (index < text.length) {
+          heading.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 100); // speed of typing
+        } else {
+          setTimeout(() => {
+            heading.innerHTML = ""; // clear the heading
+            index = 0; // reset index
+            typeWriter(); // restart typing
+          }, 1500); // pause 1.5 seconds before restarting
+        }
+      }
+
+      typeWriter();
+    </script>
+
+    <!-- Scripts -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/validnavs.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/cursor-circle.js"></script>
+  </body>
+</html>

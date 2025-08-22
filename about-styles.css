@@ -1,0 +1,382 @@
+/* ==============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================== */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Arial", sans-serif;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+@keyframes fadeInLeftBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.9);
+  }
+  60% {
+    transform: translateX(15px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUpStrong {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomInStrong {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==============================================
+   FOOTER STYLES
+   ============================================== */
+
+footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 400;
+  padding: 40px 20px;
+
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeInUp 1s ease-out, ecgTextPulse 10s ease-in-out infinite 4s;
+}
+
+footer a {
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  animation: ecgTextPulse 12s ease-in-out infinite;
+}
+
+footer a:hover {
+  color: #00ff90;
+  transform: translateX(5px);
+  animation: ecgTextPulse 2s ease-in-out infinite;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer h5 {
+  color: #7df9ff;
+  margin-bottom: 15px;
+  animation: ecgTextPulse 8s ease-in-out infinite;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: calc(var(--i) * 0.2s);
+  animation-fill-mode: both;
+}
+
+.footer-logo img {
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #7df9ff;
+  animation: glow 2s ease-in-out infinite,
+    ecgHeartbeat 4s ease-in-out infinite 1s;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  margin-right: 15px;
+}
+
+
+
+/* ECG Scan Lines */
+.ecg-scan-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  animation: ecgScan 4s linear infinite;
+  opacity: 0.7;
+}
+
+/* ==============================================
+   ABOUT US HERO SECTION
+   ============================================== */
+
+.about-us-section {
+  padding: 60px 20px;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 50px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text-content {
+  flex: 1 1 500px;
+  min-width: 320px;
+}
+
+.about-text-content h3 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #4154f1;
+}
+
+.about-text-content h2 {
+  color: #0f0f0f;
+}
+
+.about-text-content p {
+  font-size: 1.125rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-image-content {
+  flex: 1 1 400px;
+  min-width: 320px;
+  text-align: center;
+}
+
+/* ==============================================
+   ANIMATION CLASSES
+   ============================================== */
+
+.float-animate {
+  animation: floatUpDown 4s ease-in-out infinite;
+  will-change: transform;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.fadeInLeftBounce {
+  animation: fadeInLeftBounce 1.5s ease forwards;
+  opacity: 0;
+}
+
+.fadeInZoom {
+  animation: fadeInZoom 1.7s ease forwards;
+  opacity: 0;
+}
+
+.fadeInSlow {
+  animation: fadeIn 1.9s ease forwards;
+  opacity: 0;
+}
+
+.text-animate-wow {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-out;
+}
+
+.fadeInUpStrong {
+  animation-name: fadeInUpStrong;
+}
+
+.zoomInStrong {
+  animation-name: zoomInStrong;
+}
+
+/* ==============================================
+   DELAY UTILITY CLASSES
+   ============================================== */
+
+.delay-0-3 {
+  animation-delay: 0.8s;
+}
+.delay-0-5 {
+  animation-delay: 0.5s;
+}
+.delay-0-7 {
+  animation-delay: 0.7s;
+}
+.delay-0-9 {
+  animation-delay: 0.9s;
+}
+.delay-1-0 {
+  animation-delay: 3s;
+}
+
+/* ==============================================
+   GENERAL STYLES
+   ============================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wow {
+  visibility: hidden;
+}
+
+.owl-carousel .item img,
+.team-items .thumb img {
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.owl-carousel .item img:hover,
+.team-items .thumb img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation duration overrides for WOW elements */
+.about-area .float-animate {
+  animation-duration: 1.2s;
+}
+
+.about-area .info .wow {
+  animation-duration: 1.2s;
+}
+
+.about-area .info .title {
+  animation-duration: 1.4s;
+}
+
+.about-area .info p {
+  animation-duration: 1.5s;
+}
+
+.about-area .progress-box {
+  animation-duration: 1.3s;
+}
+
+.our-process-area .item.wow {
+  animation-duration: 1.2s;
+}
+
+.choose-us-area .float-animate {
+  animation-duration: 1.5s;
+}
+
+.choose-us-area .text-animate-wow:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.choose-us-area .text-animate-wow:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.choose-us-area .text-animate-wow:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.choose-us-area .text-animate-wow:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+
+   
+@media (max-width: 768px) {
+  .footer-row,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom a {
+    margin: 5px 10px;
+  }
+
+  .about-us-section {
+    padding: 40px 15px;
+  }
+
+  .about-text-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .about-container {
+    gap: 30px;
+  }
+}

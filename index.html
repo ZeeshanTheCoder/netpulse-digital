@@ -1,772 +1,1183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Netpulse Digitals">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Netpulse Digitals" />
     <title>Netpulse Digital</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/themify-icons.css" rel="stylesheet">
-    <link href="assets/css/flaticon-set.css" rel="stylesheet">
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/validnavs.css" rel="stylesheet">
-    <link href="assets/css/helper.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-    <style>
-        
+    <link rel="shortcut icon" href="assets/img/net.jpg" type="image/x-icon" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/validnavs.css" rel="stylesheet" />
+    <link href="assets/css/helper.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="custom-styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
 
-        /* ECG Background Canvas */
-        #ecg-bg-canvas {
-            position: fixed;
-            top: 0; 
-            left: 0;
-            width: 100vw; 
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.4;
-        }
-
-        /* Multiple ECG line canvases */
-        .ecg-line-canvas {
-            position: fixed;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.2;
-            mix-blend-mode: screen;
-        }
-
-        /* Ensure content is above the canvas */
-   
-
-       
-     
-
-        /* Apply ECG animations to elements */
-        
-
-       
-
-       
-
-        .banner-area h2 {
-            animation: slideInLeft 1s ease-out 0.5s both, ecgTextPulse 3s ease-in-out infinite 2s;
-        }
-
-        .banner-area p {
-            animation: slideInLeft 1s ease-out 0.7s both;
-        }
-
-        .banner-area .thumb {
-            animation: slideInRight 1s ease-out 0.5s both;
-        }
-
-        .banner-area .thumb img {
-            animation: float 3s ease-in-out infinite, ecgHeartbeat 4s ease-in-out infinite 1s;
-        }
-
-        .features-area .item {
-            animation: bounceIn 0.8s ease-out, ecgCardPulse 5s ease-in-out infinite 2s;
-            transition: all 0.3s ease;
-        }
-
-        .features-area .item:hover {
-            transform: translateY(-10px) scale(1.05);
-            animation: ecgCardPulse 1s ease-in-out infinite;
-        }
-
-        .features-area .icon {
-            animation: rotateIn 1s ease-out 0.3s both, ecgIconPulse 3s ease-in-out infinite 1s;
-        }
-
-        .choose-us-area .thumb {
-            animation: slideInLeft 1s ease-out 0.3s both;
-        }
-
-        .choose-us-area .thumb img {
-            animation: float 4s ease-in-out infinite, ecgHeartbeat 6s ease-in-out infinite 0.5s;
-        }
-
-        .choose-us-area .info {
-            animation: slideInRight 1s ease-out 0.5s both;
-        }
-
-        .choose-us-area ul li {
-            animation: fadeInUp 0.6s ease-out, ecgTextPulse 8s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.1s);
-            animation-fill-mode: both;
-        }
-
-        .services-area .item {
-            animation: flipInX 0.8s ease-out, ecgCardPulse 4s ease-in-out infinite 1s;
-            transition: all 0.3s ease;
-        }
-
-        .services-area .item:hover {
-            transform: scale(1.05);
-            animation: ecgCardPulse 0.8s ease-in-out infinite, glow 1s ease-in-out infinite;
-        }
-
-        .services-area .icon {
-            animation: ecgIconPulse 3s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.3s);
-        }
-
-        .process-area .thumb {
-            animation: slideInLeft 1s ease-out 0.3s both;
-        }
-
-        .process-area .thumb img {
-            animation: float 3.5s ease-in-out infinite, ecgHeartbeat 5s ease-in-out infinite 1.5s;
-        }
-
-        .process-area .content .item {
-            animation: slideInRight 0.6s ease-out, ecgTextPulse 6s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.2s);
-            animation-fill-mode: both;
-        }
-
-        .clients-area .info {
-            animation: slideInLeft 1s ease-out 0.3s both, ecgTextPulse 7s ease-in-out infinite 2s;
-        }
-
-        .clients-area .clients-carousel {
-            animation: slideInRight 1s ease-out 0.5s both;
-        }
-
-        .clients-area .clients-carousel img {
-            animation: ecgHeartbeat 4s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.5s);
-        }
-
-        .testimonials-area .client-thumb {
-            animation: slideInLeft 1s ease-out 0.3s both;
-        }
-
-        .testimonials-area .client-thumb img {
-            animation: float 2s ease-in-out infinite, ecgHeartbeat 3s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.5s);
-        }
-
-        .testimonials-area .testimonial-content {
-            animation: slideInRight 1s ease-out 0.5s both, ecgTextPulse 8s ease-in-out infinite 3s;
-        }
-
-        .blog-area .item {
-            animation: zoomIn 0.8s ease-out, ecgCardPulse 6s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.2s);
-            animation-fill-mode: both;
-            transition: all 0.3s ease;
-        }
-
-        .blog-area .item:hover {
-            transform: translateY(-10px) scale(1.02);
-            animation: ecgCardPulse 1.5s ease-in-out infinite;
-        }
-
-        .blog-area .thumb img {
-            transition: all 0.3s ease;
-            animation: ecgHeartbeat 8s ease-in-out infinite;
-        }
-
-        .blog-area .item:hover .thumb img {
-            transform: scale(1.1);
-            animation: ecgHeartbeat 2s ease-in-out infinite;
-        }
-
-        /* Footer with ECG pulse */
-        footer {
-            background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
-            color:#fff;
-            padding:40px 20px;
-            border-top-left-radius:30px;
-            border-top-right-radius:30px;
-            font-family:'Segoe UI',sans-serif;
-            animation:fadeInUp 1s ease-out, ecgTextPulse 10s ease-in-out infinite 4s;
-        }
-
-        footer a{
-            color:#aaa;
-            text-decoration:none;
-            transition:color 0.3s,transform 0.3s;
-            animation: ecgTextPulse 12s ease-in-out infinite;
-        }
-
-        footer a:hover{
-            color:#00ff90;
-            transform:translateX(5px);
-            animation: ecgTextPulse 2s ease-in-out infinite;
-        }
-
-        footer ul{list-style:none;padding:0;}
-        footer h5{
-            color:#7DF9FF;
-            margin-bottom:15px;
-            animation: ecgTextPulse 8s ease-in-out infinite;
-        }
-
-        .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:30px;}
-        .footer-col{
-            flex:1;
-            min-width:250px;
-            margin-bottom:20px;
-            animation: fadeInUp 0.8s ease-out;
-            animation-delay: calc(var(--i) * 0.2s);
-            animation-fill-mode: both;
-        }
-
-        .footer-logo img{
-            height:60px;
-            border-radius:10px;
-            box-shadow:0 0 10px #7DF9FF;
-            animation: glow 2s ease-in-out infinite, ecgHeartbeat 4s ease-in-out infinite 1s;
-        }
-
-        .footer-bottom{
-            border-top:1px solid #444;
-            padding-top:20px;
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:space-between;
-            font-size:14px;
-        }
-
-        .footer-bottom a{margin-right:15px;}
-
-        @media(max-width:768px){
-            .footer-row,.footer-bottom{
-                flex-direction:column;
-                align-items:center;
-                text-align:center;
-            }
-            .footer-bottom a{margin:5px 10px;}
-        }
-
-        /* ECG Scan Lines */
-        .ecg-scan-line {
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    animation: ecgScan 4s linear infinite;
-    opacity: 0.7;
-}
-
-
-        /* ECG Signal Paths */
-        .ecg-signal {
-            position: absolute;
-            width: 100px;
-            height: 2px;
-            background: #7DF9FF;
-            animation: ecgSignal 6s linear infinite;
-        }
-
-        /* ECG Rhythm Bars */
-        .ecg-rhythm {
-            position: absolute;
-            width: 2px;
-            animation: ecgRhythm 1s ease-in-out infinite;
-        }
-
-        /* Enhanced Hover Effects */
-        .navbar-nav li a {
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .navbar-nav li a:hover {
-            transform: translateY(-2px);
-            animation: ecgTextPulse 1s ease-in-out infinite;
-        }
-
-        .navbar-nav li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: #7DF9FF;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .navbar-nav li a:hover::after {
-            width: 100%;
-            animation: ecgPulseWave 1s ease-out infinite;
-        }
-
-        /* Button ECG Animations */
-        .btn, button, [type="submit"] {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: ecgHeartbeat 8s ease-in-out infinite;
-        }
-
-        .btn:hover, button:hover, [type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(125, 249, 255, 0.4);
-            animation: ecgHeartbeat 2s ease-in-out infinite;
-        }
-
-        /* Image ECG Effects */
-        img {
-            transition: all 0.3s ease;
-        }
-
-        .thumb:hover img {
-            transform: scale(1.05);
-            animation: ecgHeartbeat 3s ease-in-out infinite;
-        }
-
-        /* Text ECG Animations */
-        .site-heading {
-            animation: fadeInUp 1s ease-out 0.3s both, ecgTextPulse 6s ease-in-out infinite 2s;
-        }
-
-        .site-heading h2 {
-            animation: slideInDown 0.8s ease-out 0.5s both, ecgTextPulse 5s ease-in-out infinite 1s;
-        }
-
-        .site-heading h5 {
-            animation: slideInDown 0.8s ease-out 0.3s both, ecgTextPulse 7s ease-in-out infinite 1.5s;
-        }
-
-        /* Shape ECG Animations */
-       
-
-      
-
-       
-       
-        /* Icon ECG Animations */
-        .icon i {
-            transition: all 0.3s ease;
-            animation: ecgIconPulse 5s ease-in-out infinite;
-        }
-
-        .item:hover .icon i {
-            transform: scale(1.2) rotateY(360deg);
-            color: #7DF9FF;
-            animation: ecgIconPulse 1s ease-in-out infinite;
-        }
-
-        /* Meta and Tag ECG Animations */
-        .meta, .tags {
-            animation: fadeInUp 0.6s ease-out 0.8s both, ecgTextPulse 8s ease-in-out infinite 2s;
-        }
-
-        .tags a {
-            transition: all 0.3s ease;
-            animation: ecgHeartbeat 6s ease-in-out infinite;
-        }
-
-        .tags a:hover {
-            transform: translateY(-2px);
-            background: #00ff90;
-            color: #000;
-            animation: ecgHeartbeat 1s ease-in-out infinite;
-        }
-
-        /* Responsive animation adjustments */
-        @media (max-width: 768px) {
-            .slideInLeft, .slideInRight {
-                animation-name: fadeInUp;
-            }
-        }
-
-        /* Stagger animation delays for lists */
-        .choose-us-area ul li:nth-child(1) { --i: 1; }
-        .choose-us-area ul li:nth-child(2) { --i: 2; }
-        .choose-us-area ul li:nth-child(3) { --i: 3; }
-        .choose-us-area ul li:nth-child(4) { --i: 4; }
-
-        .process-area .content .item:nth-child(1) { --i: 1; }
-        .process-area .content .item:nth-child(2) { --i: 2; }
-        .process-area .content .item:nth-child(3) { --i: 3; }
-
-        .blog-area .single-item:nth-child(1) .item { --i: 1; }
-        .blog-area .single-item:nth-child(2) .item { --i: 2; }
-        .blog-area .single-item:nth-child(3) .item { --i: 3; }
-
-        .footer-col:nth-child(1) { --i: 1; }
-        .footer-col:nth-child(2) { --i: 2; }
-        .footer-col:nth-child(3) { --i: 3; }
-
-        .testimonials-area .client-thumb img:nth-child(1) { --i: 1; }
-        .testimonials-area .client-thumb img:nth-child(2) { --i: 2; }
-        .testimonials-area .client-thumb img:nth-child(3) { --i: 3; }
-        .testimonials-area .client-thumb img:nth-child(4) { --i: 4; }
-
-        .navbar-nav li:nth-child(1) a { --i: 1; }
-        .navbar-nav li:nth-child(2) a { --i: 2; }
-        .navbar-nav li:nth-child(3) a { --i: 3; }
-        .navbar-nav li:nth-child(4) a { --i: 4; }
-        .navbar-nav li:nth-child(5) a { --i: 5; }
-
-        .services-area .item:nth-child(1) .icon { --i: 1; }
-        .services-area .item:nth-child(2) .icon { --i: 2; }
-        .services-area .item:nth-child(3) .icon { --i: 3; }
-        .services-area .item:nth-child(4) .icon { --i: 4; }
-        .services-area .item:nth-child(5) .icon { --i: 5; }
-
-        .clients-area .clients-carousel img:nth-child(1) { --i: 1; }
-        .clients-area .clients-carousel img:nth-child(2) { --i: 2; }
-        .clients-area .clients-carousel img:nth-child(3) { --i: 3; }
-
-        /* ECG Background Particles */
-        .ecg-particle {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: #00ff90;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: ecgParticleFloat 8s linear infinite;
-        }
-
-        @keyframes ecgParticleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) translateX(0);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) translateX(100px);
-            }
-        }
-
-        /* Preloader ECG Animation */
-        .site-preloader {
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        .site-preloader .ring {
-            animation: ecgHeartbeat 1.5s ease-in-out infinite;
-        }
-
-        .site-preloader h2 {
-            animation: ecgTextPulse 2s ease-in-out infinite;
-        }
-    </style>
     <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
     <![endif]-->
-</head>
-<body>
+  </head>
 
-<!-- ECG background canvas -->
-<canvas id="ecg-bg-canvas"></canvas>
+  <body>
+    <!-- Circle that follows cursor -->
+    <div class="cursor-circle" id="cursorCircle"></div>
 
-<!-- Additional ECG line canvases -->
-<canvas class="ecg-line-canvas" id="ecg-line-1"></canvas>
-<canvas class="ecg-line-canvas" id="ecg-line-2"></canvas>
-<canvas class="ecg-line-canvas" id="ecg-line-3"></canvas>
+    <!-- ECG background canvas -->
+    <canvas id="ecg-bg-canvas"></canvas>
 
-<!-- Preloader -->
-<div id="site-preloader" class="site-preloader">
-    <div class="loader-wrap">
-        <div class="ring"><span></span></div>
-        <h2>Netpulse Digital</h2>
-    </div>
-</div>
+    <!-- Additional ECG line canvases -->
+    <canvas class="ecg-line-canvas" id="ecg-line-1"></canvas>
+    <canvas class="ecg-line-canvas" id="ecg-line-2"></canvas>
+    <canvas class="ecg-line-canvas" id="ecg-line-3"></canvas>
 
-<!-- Header -->
-<header>
-    <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed dark no-background">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"><i class="fa fa-bars"></i></button>
-                <a class="navbar-brand" href="index.html"><img src="assets/img/net.jpg" height="140px"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-menu">
-                <img src="assets/img/net.jpg" alt="Logo">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"><i class="fa fa-times"></i></button>
-                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about-us.html">About us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="blog-standard.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="overlay-screen"></div>
-    </nav>
-</header>
+    <!-- Header -->
+    <header id="header"></header>
 
-<!-- Banner -->
-<div class="banner-area with-fixed-nav" style="margin-top: 20px;">
-    <div class="shape-right-bottom shape opacity-default"><img src="assets/img/shape/13.png" alt="Shape"></div>
-    <div class="ecg-scan-line" style="left: 20%;"></div>
-    <div class="ecg-scan-line" style="left: 70%; animation-delay: 2s;"></div>
-    <div class="container">
+    <!-- Banner -->
+    <div class="banner-area with-fixed-nav" style="padding: -80px -10px">
+      <div class="shape-right-bottom shape opacity-default">
+        <img src="assets/img/shape/13.png" alt="Shape" />
+      </div>
+
+      <div class="container">
         <div class="double-items">
-            <div class="row align-center">
-                <div class="col-lg-6 info">
-                    <h2 class="wow fadeInDown" data-wow-duration="1s">Increase Your Online Presence with <strong>Netpulse Digital</strong></h2>
-                    <p class="wow fadeInLeft" data-wow-duration="1.5s">
-                        From striking creative design and seamless web & app development to results-driven digital marketing, intelligent chatbots, and captivating eBook design and publishing — we help your business grow and drive traffic where it matters most.
-                    </p>
-                </div>
-                <div class="col-lg-6 thumb wow fadeInRight" data-wow-duration="1s"><img src="assets/img/illustration/2.png" alt="Thumb"></div>
+          <div class="row align-center">
+            <div class="col-lg-6 info">
+              <h2
+                id="typewriter"
+                class="wow fadeInDown"
+                data-wow-duration="1s"
+                style="font-size: 55px"
+              ></h2>
+              <p
+                class="wow fadeInLeft"
+                data-wow-duration="1.5s"
+                style="font-size: 16px; line-height: 1.2"
+              >
+                From striking creative design and seamless web & app development
+                to results-driven digital marketing, intelligent chatbots, and
+                captivating eBook design and publishing — we help your business
+                grow and drive traffic where it matters most.
+              </p>
             </div>
+            <div class="col-lg-6 thumb wow fadeInRight" data-wow-duration="1s">
+              <img src="assets/img/hero-section/2.jpg" alt="Thumb" />
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Features -->
-<div class="features-area default-padding-bottom">
-    <div class="shape-left-top shape opacity-01"><img src="assets/img/shape/4.png" alt="Shape"></div>
-    <div class="ecg-signal" style="top: 10%; left: 0;"></div>
-    <div class="ecg-signal" style="top: 50%; left: 0; animation-delay: 2s;"></div>
-    <div class="ecg-signal" style="top: 80%; left: 0; animation-delay: 4s;"></div>
-    <div class="container">
+    <div class="features-area default-padding-bottom" style="margin-top: -36px">
+      <div class="container">
         <div class="features-items">
-            <div class="feature-box text-center">
-                <div class="row">
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item wow fadeInUp" data-wow-delay="400ms">
-                            <div class="icon"><i class="fas fa-code"></i></div>
-                            <h4>Web Development</h4>
-                            <p>Our web development team creates quick, mobile-responsive, and flexible websites tailored to your company's objectives...</p>
-                        </div>
-                    </div>
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item wow fadeInUp" data-wow-delay="500ms">
-                            <div class="icon"><i class="fas fa-paint-brush"></i></div>
-                            <h4>Creative Design</h4>
-                            <p>Our design team creates stunning and user-friendly design concepts that help bring your brand's message to life...</p>
-                        </div>
-                    </div>
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item wow fadeInUp" data-wow-delay="600ms">
-                            <div class="icon"><i class="fas fa-bullhorn"></i></div>
-                            <h4>Digital Marketing</h4>
-                            <p>We offer effective digital marketing strategies that are driven by results — including SEO, social media, and pay-per-click advertising campaigns...</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="feature-box text-center">
+            <div class="d-flex justify-content-between">
+              <h2>Our Services</h2>
+              <button
+                class="btn-primary text-white px-4 border-0 rounded-3 fs-6 fw-semibold cursor-pointer"
+              >
+                Get Started
+              </button>
             </div>
-        </div>
-    </div>
-</div>
+            <!-- Swiper Slider Start -->
+            <div class="swiper myFeatureSwiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-bullhorn"></i></div>
+                    <h4>Digital Marketing</h4>
+                    <p>
+                      We offer effective digital marketing strategies that are
+                      driven by results — including SEO and social media
+                    </p>
+                    <a
+                      href="/DigitalMarketing.html"
+                      style="text-decoration: none"
+                    >
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
 
-<!-- Why Choose Us -->
-<div class="choose-us-area default-padding-bottom">
-    <div class="ecg-rhythm" style="top: 20%; left: 10%;"></div>
-    <div class="ecg-rhythm" style="top: 60%; right: 10%; animation-delay: 1s;"></div>
-    <div class="container">
+                <!-- Slide 2 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                    <h4>Creative Design</h4>
+                    <p>
+                      Our design team creates stunning and user-friendly design
+                      concepts that help bring your brand's message to life...
+                    </p>
+                    <a href="/Design.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h4>Web Development</h4>
+                    <p>
+                      Our web development team creates quick, mobile-responsive,
+                      and flexible websites tailored to your company's
+                      objectives...
+                    </p>
+                    <a href="/Web.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <h4>AI Automation</h4>
+                    <p>
+                      Streamline your business operations with smart AI
+                      automation tools designed to boost efficiency and
+                      accuracy.
+                    </p>
+                    <a href="/AIAutomation.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(142, 68, 173, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-book"></i></div>
+                    <h4>E-Books</h4>
+                    <p>
+                      Discover our professionally crafted e-books that deliver
+                      valuable insights and practical guidance for all readers.
+                    </p>
+                    <a href="/EBooks.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(255, 152, 0, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Mobile Application Development</h4>
+                    <p>
+                      We build powerful mobile app with intuitive interfaces for
+                      both Android and iOS platforms.
+                    </p>
+                    <a href="/MobileApp.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(59, 89, 152, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Swiper Navigation and Pagination -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- Swiper Slider End -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".myFeatureSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: false,
+        autoplay: {
+          delay: 7000, // 3000ms = 3 seconds
+          disableOnInteraction: false, // keep autoplay active even after user swipes
+        },
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+
+    <!-- Optional Custom Styling -->
+    <style>
+      .swiper {
+        padding: 40px 0;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        height: auto;
+      }
+      .item {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        max-width: 350px;
+        width: 100%;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        padding: 12px;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #4154f1;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 24px;
+      }
+
+      .swiper-button-prev {
+        left: 10px;
+      }
+      .swiper-button-next {
+        right: 10px;
+      }
+    </style>
+
+    <!-- Why Choose Us -->
+    <div
+      class="choose-us-area default-padding-bottom enhanced-section"
+      style="
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        margin-top: -36px;
+      "
+    >
+      <!-- Decorative ECG lines -->
+      <div class="ecg-rhythm" style="top: 20%; left: 10%"></div>
+      <div
+        class="ecg-rhythm"
+        style="top: 60%; right: 10%; animation-delay: 1s"
+      ></div>
+
+      <div class="container">
         <div class="row align-center">
-            <div class="col-lg-6 thumb wow fadeInLeft"><img src="assets/img/illustration/7.png" alt="Thumb"></div>
-            <div class="col-lg-6 info wow fadeInUp" data-wow-delay="0.5s">
-                <h2 class="title">At Netpulse Digital, we specialize in <strong>innovative digital solutions!</strong></h2>
-                <p>By blending creativity and technology, we produce memorable digital experiences. This includes web design & development as well as performance-based marketing...</p>
-                <p>Expand the impact of your brand beyond borders with our tailored digital strategies.</p>
-                <ul>
-                    <li><h5>Experienced Team of Specialists</h5><p>Our highly seasoned team of specialists offers innovative yet result-focused solutions.</p></li>
-                    <li><h5>Client Support</h5><p>We provide continuous communication and assistance from start to finish...</p></li>
-                    <li><h5>Global Reach</h5><p>Expand your presence and connect with customers beyond geographical limits.</p></li>
-                    <li><h5>Solid Team Culture</h5><p>Our committed and knowledgeable team is focused on upholding high standards...</p></li>
-                </ul>
-            </div>
+          <div class="col-lg-6 thumb wow fadeInLeft">
+            <img
+              src="assets/img/illustration/7.png"
+              width="500"
+              height="500"
+              alt="Thumb"
+            />
+          </div>
+          <div class="col-lg-6 info wow fadeInUp" data-wow-delay="0.5s">
+            <h2 class="title animated-gradient-text">
+              At Netpulse Digital, we specialize in innovative digital
+              solutions!
+            </h2>
+            <p>
+              By blending creativity and technology, we produce memorable
+              digital experiences. Expand the impact of your brand beyond
+              borders with our tailored digital strategies.
+            </p>
+            <ul class="animated-list">
+              <li>
+                <h5>Experienced Team of Specialists</h5>
+                <p>
+                  Our highly seasoned team of specialists offers innovative yet
+                  result-focused solutions.
+                </p>
+              </li>
+              <li>
+                <h5>Client Support</h5>
+                <p>
+                  We provide continuous communication and assistance from start
+                  to finish...
+                </p>
+              </li>
+              <li>
+                <h5>Global Reach</h5>
+                <p>
+                  Expand your presence and connect with customers beyond
+                  geographical limits.
+                </p>
+              </li>
+              <li>
+                <h5>Solid Team Culture</h5>
+                <p>
+                  Our committed and knowledgeable team is focused on upholding
+                  high standards...
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Services -->
-<div class="services-area carousel-shadow bg-gray default-padding">
-    <div class="shape-bottom"><img src="assets/img/shape/1.svg" alt="Shape"></div>
-    <div class="ecg-scan-line" style="left: 30%; animation-delay: 1s;"></div>
-    <div class="ecg-scan-line" style="left: 80%; animation-delay: 3s;"></div>
-    <div class="container">
-        <div class="row"><div class="col-lg-8 offset-lg-2"><div class="site-heading text-center"><h5>What we Offer</h5><h2>Let's look over our unique Digital <br>Marketing solutions today.</h2><div class="heading-divider"></div></div></div></div>
-        <div class="services-items wow fadeInUp services-carousel owl-carousel owl-theme">
-            <div class="item"><div class="icon"><i class="flaticon-bullhorn"></i></div><div class="info"><h4><a href="#">Social Media Marketing</a></h4><p>Our social media strategies based on data result in growth, engagement, and conversion on platforms like Facebook, Instagram, and LinkedIn...</p></div></div>
-            <div class="item"><div class="icon"><i class="flaticon-keyword-1"></i></div><div class="info"><h4><a href="#">Keyword Research</a></h4><p>Our team conducts extensive research to discover high-performing search terms that drive qualified traffic and improve SEO rankings...</p></div></div>
-            <div class="item"><div class="icon"><i class="flaticon-marketing"></i></div><div class="info"><h4><a href="#">Content Marketing</a></h4><p>Our skilled content marketers craft and distribute valuable, consistent content that builds trust, boosts engagement, and supports long-term growth...</p></div></div>
-            <div class="item"><div class="icon"><i class="flaticon-ppc"></i></div><div class="info"><h4><a href="#">PPC Advertising</a></h4><p>Maximize your ROI with our targeted pay-per-click campaigns managed across Google Ads, Meta Ads, and more...</p></div></div>
-            <div class="item"><div class="icon"><i class="flaticon-competition"></i></div><div class="info"><h4><a href="#">Competitor Research</a></h4><p>Stay ahead of the competition with in-depth competitor and market analysis...</p></div></div>
-        </div>
-    </div>
-</div>
-
-<!-- Process -->
-<div class="process-area relative">
-    <div class="ecg-signal" style="top: 30%; left: 0; animation-delay: 1s;"></div>
-    <div class="ecg-signal" style="top: 70%; left: 0; animation-delay: 3s;"></div>
-    <div class="container">
-        <div class="process-items">
-            <div class="row align-center">
-                <div class="col-lg-6 thumb wow fadeInLeft"><img src="assets/img/illustration/3.png" alt="Thumb"></div>
-                <div class="col-lg-6 info wow fadeInUp">
-                    <h2>We are passionate about what we do <strong>and helping others achieve success</strong></h2>
-                    <div class="content">
-                        <div class="item"><div class="icon"><i class="fas fa-angle-right"></i></div><h4><strong>01.</strong> Research</h4><p>We start by understanding your company's goals, industry trends, and audience behavior...</p></div>
-                        <div class="item"><div class="icon"><i class="fas fa-angle-right"></i></div><h4><strong>02.</strong> Data Collection</h4><p>We collect insights through analytics, user behavior, and market performance to guide design, content, and marketing decisions...</p></div>
-                        <div class="item"><div class="icon"><i class="fas fa-angle-right"></i></div><h4><strong>03.</strong> Targeting</h4><p>With precise targeting across all platforms, we reach your most relevant audience with the right message...</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Clients -->
-<div class="clients-area text-light bg-gradient default-padding-mx">
-    <div class="fixed-bg" style="background-image: url(assets/img/map.svg);"></div>
-    <div class="ecg-rhythm" style="top: 40%; left: 5%;"></div>
-    <div class="ecg-rhythm" style="top: 40%; right: 5%; animation-delay: 0.5s;"></div>
-    <div class="container">
-        <div class="row align-center">
-            <div class="col-lg-5 info"><h2>We've Worked With Them, <strong> Now Trust Each</strong> Other</h2></div>
-            <div class="col-lg-7">
-                <div class="clients-carousel owl-carousel owl-theme">
-                    <div class="item"><img src="assets/img/logo2.svg" alt="Thumb"></div>
-                    <div class="item"><img src="assets/img/yy.jpg" alt="Thumb"></div>
-                    <div class="item"><img src="assets/img/logoo.jpg" alt="Thumb"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="shape-bottom"><img src="assets/img/shape/8.png" alt="Shape"></div>
-</div>
-
-<!-- Testimonials -->
-<div class="testimonials-area default-padding">
-    <div class="ecg-scan-line" style="left: 15%; animation-delay: 2s;"></div>
-    <div class="ecg-scan-line" style="left: 85%; animation-delay: 4s;"></div>
-    <div class="container">
-        <div class="testimonial-items">
-            <div class="row align-center">
-                <div class="col-lg-5 wow fadeInLeft"><div class="client-thumb"><img src="/assets/img/testinomial.avif" alt="Thumb"><img src="assets/img/t2.avif" alt="Thumb"><img src="assets/img/t3.avif" alt="Thumb"><img src="assets/img/t4.avif" alt="Thumb"></div></div>
-                <div class="col-lg-6 offset-lg-1 testimonial-content wow fadeInRight">
-                    <div class="heading"><h2 class="title">What people say <br> About our Services</h2></div>
-                    <div class="testimonials-carousel owl-carousel owl-theme">
-                        <div class="item"><p>Netpulse Digital did a terrific job in creating and managing my facebook ads. I highly recommend him. He knows what he is doing and is very responsive and a good communicator.<p>Robert Savar.</p><p>Delray Beach,United States</p></p><div class="author"><div class="info"><h5>Netpulse Digital</h5></div></div></div>
-                        <div class="item"><p>Great freelancer! Delivered high-quality work on time. I will definitely work with him again. Vitaliy<p>Ukraine</p></p><div class="author"><div class="info"><h5>Netpulse Digital</h5></div></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Blog -->
-<div class="blog-area default-padding bottom-less bg-gray">
-    <div class="ecg-signal" style="top: 20%; left: 0; animation-delay: 2s;"></div>
-    <div class="ecg-signal" style="top: 80%; left: 0; animation-delay: 4s;"></div>
-<div class="container">
-    <div class="row"><div class="col-lg-8 offset-lg-2"><div class="site-heading text-center"><h5>Latest News</h5><h2>Stay Updated with Netpulse Digital <br> Latest & Popular Insights</h2><div class="heading-divider"></div></div></div></div>
-    <div class="blog-items content-less">
+    <!-- Services -->
+    <div
+      class="services-area carousel-shadow bg-gray default-padding"
+      style="margin-top: -30px"
+    >
+      <div class="shape-bottom">
+        <img src="assets/img/shape/1.svg" alt="Shape" />
+      </div>
+      <div class="ecg-scan-line" style="left: 30%; animation-delay: 1s"></div>
+      <div class="ecg-scan-line" style="left: 80%; animation-delay: 3s"></div>
+      <div class="container">
         <div class="row">
-            <div class="single-item col-lg-4 col-md-6">
-                <div class="item wow fadeInUp" data-wow-delay="600ms">
-                    <div class="thumb"><a href="#"><img src="assets/img/d1.jpg" alt="Thumb"></a></div>
-                    <div class="info">
-                        <div class="tags"><a href="#">Design</a><a href="#">Branding</a></div>
-                        <div class="meta"><ul><li><i class="fas fa-calendar-alt"></i> 18 Nov, 2025</li><li>By <a href="#">Netpulse Team</a></li></ul></div>
-                        <h4><a href="#">Design Trends That Are Shaping the Future of Branding</a></h4>
-                    </div>
-                </div>
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h5>What we Offer</h5>
+              <h2>
+                Let's look over our unique Digital <br />Marketing solutions
+                today.
+              </h2>
+              <div class="heading-divider"></div>
             </div>
-            <div class="single-item col-lg-4 col-md-6">
-                <div class="item wow fadeInUp" data-wow-delay="600ms">
-                    <div class="thumb"><a href="#"><img src="assets/img/fastprint.jpeg" alt="Thumb"></a></div>
-                    <div class="info">
-                        <div class="tags"><a href="#">Web</a><a href="#">Development</a></div>
-                        <div class="meta"><ul><li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li><li>By <a href="#">Netpulse Team</a></li></ul></div>
-                        <h4><a href="#">Why Responsive Web Development Matters More Than Ever</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item col-lg-4 col-md-6">
-                <div class="item wow fadeInUp" data-wow-delay="600ms">
-                    <div class="thumb"><a href="#"><img src="assets/img/d2.jpg" alt="Thumb"></a></div>
-                    <div class="info">
-                        <div class="tags"><a href="#">Marketing</a><a href="#">Strategy</a></div>
-                        <div class="meta"><ul><li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li><li>By <a href="#">Netpulse Team</a></li></ul></div>
-                        <h4><a href="#">Proven Digital Marketing Strategies That Drive Results</a></h4>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div
+          class="services-items wow fadeInUp services-carousel owl-carousel owl-theme"
+        >
+          <div class="item">
+            <div class="icon"><i class="flaticon-bullhorn"></i></div>
+            <div class="info">
+              <h4><a>Social Media Marketing</a></h4>
+              <p>
+                Our social media strategies based on data result in growth,
+                engagement, and conversion on platforms like Facebook,
+                Instagram, and LinkedIn...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-keyword-1"></i></div>
+            <div class="info">
+              <h4><a>Keyword Research</a></h4>
+              <p>
+                Our team conducts extensive research to discover high-performing
+                search terms that drive qualified traffic and improve SEO
+                rankings...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-marketing"></i></div>
+            <div class="info">
+              <h4><a>Content Marketing</a></h4>
+              <p>
+                Our skilled content marketers craft and distribute valuable,
+                consistent content that builds trust, boosts engagement, and
+                supports long-term growth...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-ppc"></i></div>
+            <div class="info">
+              <h4><a>PPC Advertising</a></h4>
+              <p>
+                Maximize your ROI with our targeted pay-per-click campaigns
+                managed across Google Ads, Meta Ads, and more...
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon"><i class="flaticon-competition"></i></div>
+            <div class="info">
+              <h4><a>Competitor Research</a></h4>
+              <p>
+                Stay ahead of the competition with in-depth competitor and
+                market analysis...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
 
-<!-- Footer -->
-<footer>
-  <div class="ecg-rhythm" style="top: 0; left: 20%;"></div>
-  <div class="ecg-rhythm" style="top: 0; right: 20%; animation-delay: 1s;"></div>
-  <div class="footer-row">
-    <div class="footer-col footer-logo">
-      <img src="assets/img/net.jpg" alt="Netpulse Logo">
-      <ul class="mt-2">
-        <li><i class="flaticon-email me-2"></i> netpulsedigitals@gmail.com</li>
-        <li><i class="flaticon-call me-2"></i> +1 832 220 8552</li>
-      </ul>
+    <!-- Process -->
+    <div class="process-area relative" style="top: -50px">
+      <div
+        class="ecg-signal"
+        style="top: 30%; left: 0; animation-delay: 1s"
+      ></div>
+      <div
+        class="ecg-signal"
+        style="top: 70%; left: 0; animation-delay: 3s"
+      ></div>
+      <div class="container">
+        <div class="process-items">
+          <div class="row align-center">
+            <div class="col-lg-6 thumb wow fadeInLeft">
+              <img src="assets/img/illustration/3.png" alt="Thumb" />
+            </div>
+            <div class="col-lg-6 info wow fadeInUp">
+              <h2>
+                We are passionate about what we do
+                <strong>and helping others achieve success</strong>
+              </h2>
+              <div class="content">
+                <div class="item active">
+                  <div class="icon"><i class="fas fa-angle-right"></i></div>
+                  <h4><strong>01.</strong> Research</h4>
+                  <p>
+                    We start by understanding your company's goals, industry
+                    trends, and audience behavior...
+                  </p>
+                </div>
+                <div class="item">
+                  <div class="icon"><i class="fas fa-angle-right"></i></div>
+                  <h4><strong>02.</strong> Data Collection</h4>
+                  <p>
+                    We collect insights from data, behavior, and trends to guide
+                    design, content, and marketing...
+                  </p>
+                </div>
+                <div class="item">
+                  <div class="icon"><i class="fas fa-angle-right"></i></div>
+                  <h4><strong>03.</strong> Targeting</h4>
+                  <p>
+                    With precise targeting across all platforms, we reach your
+                    most relevant audience with the right message...
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
+
+    <!-- Clients -->
+    <div
+      class="clients-area text-light bg-gradient default-padding-mx"
+      style="top: 20px; position: relative; overflow: hidden"
+    >
+      <style>
+        /* Fade-in + slide up animation */
+        @keyframes fadeSlideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .clients-area {
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-duration: 0.8s;
+          animation-timing-function: ease-out;
+        }
+
+        /* Trigger fadeSlideUp when visible */
+        .clients-area.visible {
+          animation-name: fadeSlideUp;
+        }
+
+        /* Carousel item fade in + scale */
+        .clients-carousel .item {
+          opacity: 0.6;
+          transform: scale(0.95);
+          transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .clients-carousel .owl-item.active .item {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        /* Optional: smooth fade on clients-carousel container */
+        .clients-carousel {
+          transition: opacity 0.5s ease;
+        }
+
+        /* Typing Animation Styles */
+        .typing-text {
+          display: inline-block;
+          position: relative;
+        }
+
+        .typing-text .char {
+          opacity: 0;
+          display: inline-block;
+          animation: typeChar 0.05s ease-in-out forwards;
+        }
+
+        .typing-text .char.space {
+          width: 0.3em;
+        }
+
+        @keyframes typeChar {
+          0% {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Cursor animation */
+        .typing-cursor {
+          display: inline-block;
+          width: 2px;
+          height: 1.2em;
+          background-color: currentColor;
+          margin-left: 3px;
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          0%,
+          50% {
+            opacity: 1;
+          }
+
+          51%,
+          100% {
+            opacity: 0;
+          }
+        }
+
+        /* Hide cursor after typing is complete */
+        .typing-complete .typing-cursor {
+          display: none;
+        }
+
+        /* Fade out animation for reset */
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .typing-text.fade-out .char {
+          animation: fadeOut 0.3s ease-in-out forwards;
+        }
+      </style>
+
+      <div
+        class="fixed-bg"
+        style="background-image: url(assets/img/map.svg)"
+      ></div>
+      <div class="ecg-rhythm" style="top: 40%; left: 5%"></div>
+      <div
+        class="ecg-rhythm"
+        style="top: 40%; right: 5%; animation-delay: 0.5s"
+      ></div>
+      <div class="container">
+        <div class="row align-center">
+          <div class="col-lg-5 info">
+            <h2
+              class="typing-text"
+              data-text="We've Worked With , Now Trust Each Other"
+            >
+              <span class="typing-cursor"></span>
+            </h2>
+          </div>
+          <div class="col-lg-7">
+            <div class="clients-carousel owl-carousel owl-theme">
+              <div class="item">
+                <img src="assets/img/logo2.svg" alt="Thumb" />
+              </div>
+              <div class="item">
+                <img
+                  src="assets/img/final.png"
+                  alt="Final Image"
+                  style="width: 400px; height: 150px"
+                />
+              </div>
+              <div class="item">
+                <img
+                  src="assets/img/desi.png"
+                  alt="Design Image"
+                  style="width: 400px; height: 150px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shape-bottom">
+        <img src="assets/img/shape/8.png" alt="Shape" />
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>Latest Posts</h5>
-      <ul>
-        <li><a href="#">Top 5 Marketing Trends - Jul 22, 2025</a></li>
-        <li><a href="#">Why Responsive Design Matters - Jul 10, 2025</a></li>
-      </ul>
+
+    <!-- Testimonials -->
+    <section
+      class="testimonial-section"
+      style="
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+        font-family: Arial, sans-serif;
+      "
+    >
+      <h2 style="text-align: center; margin-bottom: 30px">
+        What Our Clients Say
+      </h2>
+      <div
+        style="
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          flex-wrap: wrap;
+        "
+      >
+        <!-- Testimonial Card 1 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="User 1"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “Netpulse Digital transformed our web presence with exceptional
+            creativity and technical expertise. Highly recommended!”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Alice Johnson
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            Marketing Manager
+          </div>
+          <div style="color: #f5a623">★★★★★</div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/45.jpg"
+            alt="User 2"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “The team's innovative solutions boosted our engagement and brought
+            measurable growth. Smooth collaboration all the way.”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Michael Smith
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            CEO, Startup Inc.
+          </div>
+          <div style="color: #f5a623">★★★★☆</div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/22.jpg"
+            alt="User 3"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 15px;
+            "
+          />
+          <p style="font-style: italic; color: #555">
+            “A reliable partner with deep digital expertise. Their marketing
+            strategy really put us ahead in the market.”
+          </p>
+          <div style="margin: 15px 0 8px; font-weight: bold; color: #333">
+            Samantha Lee
+          </div>
+          <div style="color: #777; font-size: 0.9em; margin-bottom: 10px">
+            Product Manager
+          </div>
+          <div style="color: #f5a623">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <div class="blog-area bottom-less bg-gray" style="padding: 50px">
+      <div
+        class="ecg-signal"
+        style="top: 20%; left: 0; animation-delay: 2s"
+      ></div>
+      <div
+        class="ecg-signal"
+        style="top: 80%; left: 0; animation-delay: 4s"
+      ></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center" style="margin-bottom: 20px">
+              <h5 style="margin-bottom: 5px">Latest News</h5>
+              <h2 style="margin-bottom: 10px">
+                Stay Updated with Netpulse Digital <br />
+                Latest & Popular Insights
+              </h2>
+              <div class="heading-divider" style="margin: 0 auto 10px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-items content-less" style="margin-top: 0">
+          <div class="row" style="margin-bottom: 0">
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="#"
+                    ><img
+                      src="assets/img/brandd.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="blog-detail.html" style="margin-right: 5px"
+                      >Design</a
+                    ><a href="blog-detail.html">Branding</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 18 Nov, 2025</li>
+                      <li>By <a href="blog-detail.html">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="blog-detail.html"
+                      >Design Trends That Are Shaping the Future of Branding</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="blog-detail.html"
+                    ><img
+                      src="assets/img/programmer-night.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="blog-detail.html" style="margin-right: 5px">Web</a
+                    ><a href="blog-detail.html">Development</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li>
+                      <li>By <a href="blog-detail.html">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="blog-detail.html"
+                      >Why Responsive Web Development Matters More Than Ever</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="single-item col-lg-4 col-md-6"
+              style="margin-bottom: 20px"
+            >
+              <div class="item" style="margin-bottom: 10px">
+                <div class="thumb">
+                  <a href="blog-detail.html"
+                    ><img
+                      src="assets/img/corporate-management-strategy-solution-branding-concept.jpg"
+                      alt="Thumb"
+                      style="width: 100%; height: auto; display: block"
+                  /></a>
+                </div>
+                <div class="info" style="padding-top: 10px">
+                  <div class="tags" style="margin-bottom: 5px">
+                    <a href="blog-detail.html" style="margin-right: 5px"
+                      >Marketing</a
+                    ><a href="blog-detail.html">Strategy</a>
+                  </div>
+                  <div class="meta" style="margin-bottom: 8px">
+                    <ul
+                      style="
+                        padding-left: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        gap: 10px;
+                        font-size: 0.9em;
+                        color: #777;
+                      "
+                    >
+                      <li><i class="fas fa-calendar-alt"></i> 05 Dec, 2025</li>
+                      <li>By <a href="blog-detail.html">Netpulse Team</a></li>
+                    </ul>
+                  </div>
+                  <h4 style="margin-top: 0">
+                    <a href="blog-detail.html"
+                      >Proven Digital Marketing Strategies That Drive Results</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div>&copy; 2025 Netpulse Digital. All rights reserved.</div>
-    <div>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="support.html">Support</a>
-    </div>
-  </div>
-</footer>
 
-<!-- Scripts -->
-<script src="assets/js/jquery-3.6.0.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/jquery.appear.js"></script>
-<script src="assets/js/jquery.easing.min.js"></script>
-<script src="assets/js/magnific-popup.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/progress-bar.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/count-to.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<script src="assets/js/YTPlayer.min.js"></script>
-<script src="assets/js/circle-progress.js"></script>
-<script src="assets/js/validnavs.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
+    <!-- internal scripts -->
 
+    <script>
+      //------------ typeWriter ------------//
+      const text = "Increase Your Online Presence with Netpulse Digital...";
+      const heading = document.getElementById("typewriter");
+      let index = 0;
 
-</body>
+      function typeWriter() {
+        if (index < text.length) {
+          heading.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 100); // speed of typing
+        } else {
+          setTimeout(() => {
+            heading.innerHTML = ""; // clear the heading
+            index = 0; // reset index
+            typeWriter(); // restart typing
+          }, 1500); // pause 1.5 seconds before restarting
+        }
+      }
+
+      typeWriter();
+
+      // clients typewriter
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const clientsArea = document.querySelector(".clients-area");
+        if (!clientsArea) return;
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                clientsArea.classList.add("visible");
+
+                // Start typing animation after section becomes visible
+                setTimeout(() => {
+                  startTypingAnimation();
+                }, 500); // Delay to let the slide-up animation finish first
+
+                obs.unobserve(clientsArea); // Animate once
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        observer.observe(clientsArea);
+
+        function startTypingAnimation() {
+          const typingElement = document.querySelector(".typing-text");
+          const text = typingElement.getAttribute("data-text");
+          const cursor = typingElement.querySelector(".typing-cursor");
+
+          // Clear existing content but keep cursor
+          typingElement.innerHTML = "";
+          typingElement.appendChild(cursor);
+          typingElement.classList.remove("typing-complete", "fade-out");
+
+          // Split text into characters and wrap each in a span
+          const chars = text.split("").map((char, index) => {
+            const span = document.createElement("span");
+            span.classList.add("char");
+
+            if (char === " ") {
+              span.classList.add("space");
+              span.innerHTML = "&nbsp;";
+            } else {
+              span.textContent = char;
+            }
+
+            return span;
+          });
+
+          // Add each character with staggered animation
+          chars.forEach((char, index) => {
+            setTimeout(() => {
+              char.style.animationDelay = "0s";
+              typingElement.insertBefore(char, cursor);
+            }, index * 80); // 80ms delay between each character
+          });
+
+          // Hide cursor after typing is complete, then restart
+          setTimeout(() => {
+            typingElement.classList.add("typing-complete");
+
+            // Wait 2 seconds, then restart the animation
+            setTimeout(() => {
+              restartTypingAnimation();
+            }, 2000);
+          }, chars.length * 80 + 1000); // Extra 1 second before hiding cursor
+        }
+
+        function restartTypingAnimation() {
+          const typingElement = document.querySelector(".typing-text");
+
+          // Add fade out class to existing characters
+          typingElement.classList.add("fade-out");
+
+          // Wait for fade out to complete, then restart
+          setTimeout(() => {
+            startTypingAnimation();
+          }, 300); // Match fadeOut animation duration
+        }
+      });
+
+      // process button icon color change on click
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(
+          ".process-items .content .item"
+        );
+
+        items.forEach((item) => {
+          item.addEventListener("click", function () {
+            items.forEach((el) => el.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+
+    <!-- Scripts -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/validnavs.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/cursor-circle.js"></script>
+  </body>
 </html>

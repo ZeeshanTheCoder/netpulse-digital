@@ -1,0 +1,848 @@
+/* ECG Background Canvas */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Arial", sans-serif;
+}
+#ecg-bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Multiple ECG line canvases */
+.ecg-line-canvas {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.banner-area h2 {
+  animation: slideInLeft 1s ease-out 0.5s both,
+    ecgTextPulse 3s ease-in-out infinite 2s;
+}
+
+.banner-area p {
+  animation: slideInLeft 1s ease-out 0.7s both;
+}
+
+.banner-area .thumb {
+  animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.banner-area .thumb img {
+  animation: float 3s ease-in-out infinite,
+    ecgHeartbeat 4s ease-in-out infinite 1s;
+}
+
+.features-area .item {
+  animation: bounceIn 0.8s ease-out, ecgCardPulse 5s ease-in-out infinite 2s;
+  transition: all 0.3s ease;
+}
+
+.features-area .item:hover {
+  transform: translateY(-10px) scale(1.05);
+  animation: ecgCardPulse 1s ease-in-out infinite;
+}
+
+.features-area .icon {
+  animation: rotateIn 1s ease-out 0.3s both,
+    ecgIconPulse 3s ease-in-out infinite 1s;
+}
+
+.choose-us-area .thumb {
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.choose-us-area .thumb img {
+  animation: float 4s ease-in-out infinite,
+    ecgHeartbeat 6s ease-in-out infinite 0.5s;
+}
+
+.choose-us-area .info {
+  animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.choose-us-area ul li {
+  animation: fadeInUp 0.6s ease-out, ecgTextPulse 8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+  animation-fill-mode: both;
+}
+
+.services-area .item {
+  animation: flipInX 0.8s ease-out, ecgCardPulse 4s ease-in-out infinite 1s;
+  transition: all 0.3s ease;
+}
+
+.services-area .item:hover {
+  transform: scale(1.05);
+  animation: ecgCardPulse 0.8s ease-in-out infinite,
+    glow 1s ease-in-out infinite;
+}
+
+.services-area .icon {
+  animation: ecgIconPulse 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+}
+
+.process-area .thumb {
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.process-area .thumb img {
+  animation: float 3.5s ease-in-out infinite,
+    ecgHeartbeat 5s ease-in-out infinite 1.5s;
+}
+
+.process-area .content .item {
+  animation: slideInRight 0.6s ease-out, ecgTextPulse 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+  animation-fill-mode: both;
+}
+
+.process-area h2 {
+  font-size: 1.8rem;
+}
+
+.process-area .content .item h4 {
+  font-size: 1.3rem;
+  /* font-weight: 100; */
+}
+
+.process-area .content .item p {
+  font-size: 1rem;
+  /* font-weight: 100; */
+}
+
+.clients-area .info {
+  animation: slideInLeft 1s ease-out 0.3s both,
+    ecgTextPulse 7s ease-in-out infinite 2s;
+}
+
+.clients-area .clients-carousel {
+  animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.clients-area .clients-carousel img {
+  animation: ecgHeartbeat 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+
+.testimonials-area .client-thumb {
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.testimonials-area .client-thumb img {
+  animation: float 2s ease-in-out infinite, ecgHeartbeat 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+
+.testimonials-area .testimonial-content {
+  animation: slideInRight 1s ease-out 0.5s both,
+    ecgTextPulse 8s ease-in-out infinite 3s;
+}
+
+.blog-area .item {
+  animation: zoomIn 0.8s ease-out, ecgCardPulse 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+}
+
+.blog-area .item:hover {
+  transform: translateY(-10px) scale(1.02);
+  animation: ecgCardPulse 1.5s ease-in-out infinite;
+}
+
+.blog-area .thumb img {
+  transition: all 0.3s ease;
+  animation: ecgHeartbeat 8s ease-in-out infinite;
+}
+
+.blog-area .item:hover .thumb img {
+  transform: scale(1.1);
+  animation: ecgHeartbeat 2s ease-in-out infinite;
+}
+
+/* Footer with ECG pulse */
+footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 400;
+  padding: 20px;
+
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeInUp 1s ease-out, ecgTextPulse 10s ease-in-out infinite 4s;
+}
+
+footer a {
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  animation: ecgTextPulse 12s ease-in-out infinite;
+}
+
+footer a:hover {
+  color: #00ff90;
+  transform: translateX(5px);
+  animation: ecgTextPulse 2s ease-in-out infinite;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer h5 {
+  color: #7df9ff;
+  margin-bottom: 15px;
+  animation: ecgTextPulse 8s ease-in-out infinite;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: calc(var(--i) * 0.2s);
+  animation-fill-mode: both;
+}
+
+.footer-logo img {
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #7df9ff;
+  animation: glow 2s ease-in-out infinite,
+    ecgHeartbeat 4s ease-in-out infinite 1s;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer-row,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom a {
+    margin: 5px 10px;
+  }
+}
+
+/* ECG Scan Lines */
+.ecg-scan-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  animation: ecgScan 4s linear infinite;
+  opacity: 0.7;
+}
+
+/* ECG Signal Paths */
+.ecg-signal {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: #7df9ff;
+  animation: ecgSignal 6s linear infinite;
+}
+
+/* ECG Rhythm Bars */
+.ecg-rhythm {
+  position: absolute;
+  width: 2px;
+  animation: ecgRhythm 1s ease-in-out infinite;
+}
+
+/* Enhanced Hover Effects */
+.navbar-nav li a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav li a:hover {
+  transform: translateY(-2px);
+  animation: ecgTextPulse 1s ease-in-out infinite;
+}
+
+.navbar-nav li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: #7df9ff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav li a:hover::after {
+  width: 100%;
+  animation: ecgPulseWave 1s ease-out infinite;
+}
+
+/* Button ECG Animations */
+.btn,
+button,
+[type="submit"] {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: ecgHeartbeat 8s ease-in-out infinite;
+}
+
+.btn:hover,
+button:hover,
+[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(125, 249, 255, 0.4);
+  animation: ecgHeartbeat 2s ease-in-out infinite;
+}
+
+/* Image ECG Effects */
+img {
+  transition: all 0.3s ease;
+}
+
+.thumb:hover img {
+  transform: scale(1.05);
+  animation: ecgHeartbeat 3s ease-in-out infinite;
+}
+
+/* Text ECG Animations */
+.site-heading {
+  animation: fadeInUp 1s ease-out 0.3s both,
+    ecgTextPulse 6s ease-in-out infinite 2s;
+}
+
+.site-heading h2 {
+  animation: slideInDown 0.8s ease-out 0.5s both,
+    ecgTextPulse 5s ease-in-out infinite 1s;
+}
+
+.site-heading h5 {
+  animation: slideInDown 0.8s ease-out 0.3s both,
+    ecgTextPulse 7s ease-in-out infinite 1.5s;
+}
+
+/* Icon ECG Animations */
+.icon i {
+  transition: all 0.3s ease;
+  animation: ecgIconPulse 5s ease-in-out infinite;
+}
+
+.item:hover .icon i {
+  transform: scale(1.2) rotateY(360deg);
+  color: #7df9ff;
+  animation: ecgIconPulse 1s ease-in-out infinite;
+}
+
+/* Meta and Tag ECG Animations */
+.meta,
+.tags {
+  animation: fadeInUp 0.6s ease-out 0.8s both,
+    ecgTextPulse 8s ease-in-out infinite 2s;
+}
+
+.tags a {
+  transition: all 0.3s ease;
+  animation: ecgHeartbeat 6s ease-in-out infinite;
+}
+
+.tags a:hover {
+  transform: translateY(-2px);
+  background: #00ff90;
+  color: #000;
+  animation: ecgHeartbeat 1s ease-in-out infinite;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 768px) {
+  .slideInLeft,
+  .slideInRight {
+    animation-name: fadeInUp;
+  }
+}
+
+/* Stagger animation delays for lists */
+.choose-us-area ul li:nth-child(1) {
+  --i: 1;
+}
+.choose-us-area ul li:nth-child(2) {
+  --i: 2;
+}
+.choose-us-area ul li:nth-child(3) {
+  --i: 3;
+}
+.choose-us-area ul li:nth-child(4) {
+  --i: 4;
+}
+
+.process-area .content .item:nth-child(1) {
+  --i: 1;
+}
+.process-area .content .item:nth-child(2) {
+  --i: 2;
+}
+.process-area .content .item:nth-child(3) {
+  --i: 3;
+}
+
+.blog-area .single-item:nth-child(1) .item {
+  --i: 1;
+}
+.blog-area .single-item:nth-child(2) .item {
+  --i: 2;
+}
+.blog-area .single-item:nth-child(3) .item {
+  --i: 3;
+}
+
+.footer-col:nth-child(1) {
+  --i: 1;
+}
+.footer-col:nth-child(2) {
+  --i: 2;
+}
+.footer-col:nth-child(3) {
+  --i: 3;
+}
+
+.testimonials-area .client-thumb img:nth-child(1) {
+  --i: 1;
+}
+.testimonials-area .client-thumb img:nth-child(2) {
+  --i: 2;
+}
+.testimonials-area .client-thumb img:nth-child(3) {
+  --i: 3;
+}
+.testimonials-area .client-thumb img:nth-child(4) {
+  --i: 4;
+}
+
+.navbar-nav li:nth-child(1) a {
+  --i: 1;
+}
+.navbar-nav li:nth-child(2) a {
+  --i: 2;
+}
+.navbar-nav li:nth-child(3) a {
+  --i: 3;
+}
+.navbar-nav li:nth-child(4) a {
+  --i: 4;
+}
+.navbar-nav li:nth-child(5) a {
+  --i: 5;
+}
+
+.services-area .item:nth-child(1) .icon {
+  --i: 1;
+}
+.services-area .item:nth-child(2) .icon {
+  --i: 2;
+}
+.services-area .item:nth-child(3) .icon {
+  --i: 3;
+}
+.services-area .item:nth-child(4) .icon {
+  --i: 4;
+}
+.services-area .item:nth-child(5) .icon {
+  --i: 5;
+}
+
+.clients-area .clients-carousel img:nth-child(1) {
+  --i: 1;
+}
+.clients-area .clients-carousel img:nth-child(2) {
+  --i: 2;
+}
+.clients-area .clients-carousel img:nth-child(3) {
+  --i: 3;
+}
+
+/* ECG Background Particles */
+.ecg-particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #00ff90;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ecgParticleFloat 8s linear infinite;
+}
+
+@keyframes ecgParticleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) translateX(100px);
+  }
+}
+
+/* Preloader ECG Animation */
+.site-preloader {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.site-preloader .ring {
+  animation: ecgHeartbeat 1.5s ease-in-out infinite;
+}
+
+.site-preloader h2 {
+  animation: ecgTextPulse 2s ease-in-out infinite;
+}
+.choose-us-area {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  padding-top: 40px; /* reduced padding */
+  padding-bottom: 40px; /* reduced padding */
+}
+
+.choose-us-area .container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.choose-us-area .row.align-center {
+  align-items: center; /* vertically centers the columns */
+}
+
+.choose-us-area .col-lg-6.thumb {
+  padding-right: 15px; /* reduce excessive horizontal padding */
+}
+
+.choose-us-area .col-lg-6.info {
+  color: white; /* set all text white */
+  padding-left: 15px;
+}
+
+.choose-us-area h2.title {
+  color: black;
+  margin-bottom: 15px; /* reduce the space below heading */
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.choose-us-area p {
+  color: white; /* set paragraph text white */
+  margin-bottom: 12px; /* space between paragraphs */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.choose-us-area ul li h5 {
+  color: white;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.choose-us-area ul li p {
+  color: white;
+}
+
+.choose-us-area ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  max-width: 600px; /* slightly wider to accommodate two items side-by-side */
+  display: flex; /* make ul a flex container */
+  flex-wrap: wrap; /* allow wrapping if needed */
+}
+
+.choose-us-area ul li {
+  flex: 1 1 45%; /* allow each li to take about half width */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.choose-us-area ul li h5 {
+  color: white;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  /* font-size: 1.2rem; */
+  line-height: 1.3;
+}
+
+.choose-us-area ul li p {
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.thumb img {
+  animation: pulseScale 6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes pulseScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.col-lg-6.thumb img {
+  max-width: 100%;
+  height: auto;
+  animation: tilt3D 2s ease-in-out infinite alternate;
+  transform-origin: center center;
+  display: block;
+}
+
+@keyframes tilt3D {
+  0% {
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateY(7deg) rotateX(4deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg);
+  }
+}
+/* Container responsiveness */
+.services-area {
+  padding: 40px 15px; /* reasonable padding on all sides */
+  box-sizing: border-box;
+}
+
+.services-area .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Heading styles */
+.services-area .site-heading h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.services-area .site-heading h2 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.services-area .heading-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #764ba2;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Services items container (carousel) */
+.services-items {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.services-items::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual service item */
+.services-items .item {
+  flex: 0 0 280px; /* fixed width on desktop, scrollable on mobile */
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.services-items .item:hover {
+  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.5);
+}
+
+.services-items .icon {
+  font-size: 3rem;
+  color: #764ba2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Title inside item */
+.services-items .info h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.services-items .info h4 a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.services-items .info h4 a:hover {
+  color: #764ba2;
+}
+
+/* Paragraph inside item */
+.services-items .info p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 992px) {
+  .services-items {
+    gap: 15px;
+  }
+  .services-items .item {
+    flex: 0 0 220px;
+    padding: 20px 15px;
+  }
+  .services-items .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  .services-area .site-heading h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Small devices (large phones) */
+@media (max-width: 576px) {
+  .services-items {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+  }
+  .services-items .item {
+    flex: 0 0 240px;
+    padding: 18px 12px;
+  }
+  .services-items .icon {
+    font-size: 2.2rem;
+  }
+  .services-area .site-heading h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices (phones) */
+/* In very narrow screens, you can stack cards vertically if desired */
+@media (max-width: 400px) {
+  .services-items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .services-items .item {
+    flex: 1 1 100%;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+  }
+  .services-items .icon {
+    font-size: 2rem;
+  }
+  .services-area .site-heading h2 {
+    font-size: 1.3rem;
+  }
+}
+/* Gradient text animation */
+.animated-gradient-text {
+  font-size: 40px;
+  background: linear-gradient(270deg, #0d1b2a, #4a5c7e, #0d1f33, #0d1b2a);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+}
+
+/* Animate gradient movement */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover effect on list items */
+.animated-list li {
+  transition: transform 0.3s ease, background 0.3s ease;
+  /* padding: 10px; */
+  border-radius: 8px;
+}
+
+.animated-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.02);
+}
+
+/* Optional: smooth fade-in from left/right for the entire section */
+.enhanced-section {
+  animation: fadeInUpSection 1s ease-in-out both;
+}
+
+@keyframes fadeInUpSection {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

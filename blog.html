@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="assets/img/net.jpg" type="image/x-icon" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/validnavs.css" rel="stylesheet" />
+    <link href="assets/css/helper.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="custom-styles.css" rel="stylesheet" />
+    <style>
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatUpDown {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-15px) scale(1.05);
+        }
+      }
+
+      @keyframes fadeInLeftBounce {
+        0% {
+          opacity: 0;
+          transform: translateX(-40px) scale(0.9);
+        }
+        60% {
+          transform: translateX(15px) scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+      }
+
+      @keyframes fadeInZoom {
+        0% {
+          opacity: 0;
+          transform: scale(0.95) translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Responsive Navigation Styles */
+
+      /* Blog specific styles */
+      .blog-hero {
+        margin-top: 110px;
+        background: #4154f1;
+        padding: 120px 20px 80px;
+        text-align: center;
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .blog-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .blog-hero p {
+        font-size: 1.3rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 20px;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(65, 84, 241, 0.2);
+      }
+
+      .blog-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .blog-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .blog-card-content {
+        padding: 30px;
+      }
+
+      .blog-meta {
+        display: flex;
+        gap: 20px;
+        font-size: 0.9rem;
+        color: #7df9ff;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .blog-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0f0f0f;
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+
+      .blog-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .read-more {
+        display: inline-flex;
+        align-items: center;
+        color: #4154f1;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .read-more:hover {
+        color: #00ff90;
+      }
+
+      .read-more::after {
+        content: "→";
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .read-more:hover::after {
+        transform: translateX(5px);
+      }
+
+      .featured-post {
+        background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+        border-radius: 25px;
+        padding: 50px;
+        margin-bottom: 80px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .featured-content {
+        flex: 1;
+      }
+
+      .featured-badge {
+        background: linear-gradient(135deg, #4154f1, #7df9ff);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .featured-post h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #0f0f0f;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .featured-post p {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .featured-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .featured-image img {
+        max-width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .categories {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 60px 0;
+      }
+
+      .category-tag {
+        background: linear-gradient(135deg, #4154f1, #7df9ff);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .category-tag:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(65, 84, 241, 0.3);
+        color: white;
+      }
+
+      /* Animation classes */
+      .float-animate {
+        animation: floatUpDown 4s ease-in-out infinite;
+        will-change: transform;
+      }
+
+      .fadeInLeftBounce {
+        animation: fadeInLeftBounce 1.5s ease forwards;
+        opacity: 0;
+      }
+
+      .fadeInZoom {
+        animation: fadeInZoom 1.7s ease forwards;
+        opacity: 0;
+      }
+
+      .fadeInSlow {
+        animation: fadeIn 1.9s ease forwards;
+        opacity: 0;
+      }
+
+      .pulse-animate {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      /* Delay utility classes */
+      .delay-0-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-0-5 {
+        animation-delay: 0.5s;
+      }
+      .delay-0-7 {
+        animation-delay: 0.7s;
+      }
+      .delay-0-9 {
+        animation-delay: 0.9s;
+      }
+      .delay-1-1 {
+        animation-delay: 1.1s;
+      }
+      .delay-1-3 {
+        animation-delay: 1.3s;
+      }
+      .delay-1-5 {
+        animation-delay: 1.5s;
+      }
+
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* WOW animations */
+      .wow {
+        visibility: hidden;
+      }
+
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
+        .footer-row,
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-bottom a {
+          margin: 5px 10px;
+        }
+
+        .blog-hero {
+          padding: 100px 20px 60px;
+          margin-top: 0;
+        }
+
+        .blog-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .blog-hero p {
+          font-size: 1.1rem;
+          padding: 0 10px;
+        }
+
+        .featured-post {
+          padding: 30px 20px;
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .featured-post h2 {
+          font-size: 2rem;
+        }
+
+        .featured-post p {
+          font-size: 1rem;
+        }
+
+        .featured-content {
+          min-width: 100%;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .blog-card-content {
+          padding: 25px 20px;
+        }
+
+        .blog-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .categories {
+          gap: 10px;
+          margin: 40px 0;
+        }
+
+        .category-tag {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .blog-container {
+          padding: 60px 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .blog-hero h1 {
+          font-size: 2rem;
+        }
+
+        .blog-hero p {
+          font-size: 1rem;
+        }
+
+        .featured-post h2 {
+          font-size: 1.8rem;
+        }
+
+        .blog-card h3 {
+          font-size: 1.3rem;
+        }
+
+        .blog-card-content {
+          padding: 20px 15px;
+        }
+
+        .category-tag {
+          padding: 8px 16px;
+          font-size: 0.8rem;
+        }
+
+        .featured-post {
+          padding: 25px 15px;
+        }
+      }
+
+      /* Additional WOW.js animations */
+      .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+
+      .fadeInUp {
+        animation-name: fadeInUp;
+      }
+
+      .fadeInDown {
+        animation-name: fadeInDown;
+      }
+
+      .fadeInLeft {
+        animation-name: fadeInLeft;
+      }
+
+      .fadeInRight {
+        animation-name: fadeInRight;
+      }
+
+      .zoomIn {
+        animation-name: zoomIn;
+      }
+
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, -100%, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        0% {
+          opacity: 0;
+          transform: translate3d(-100%, 0, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        0% {
+          opacity: 0;
+          transform: translate3d(100%, 0, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes zoomIn {
+        0% {
+          opacity: 0;
+          transform: scale3d(0.3, 0.3, 0.3);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+    </style>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Netpulse Digital Blog - Latest Digital Marketing Insights & Strategies"
+    />
+
+    <!-- Page Title -->
+    <title>Blog - Netpulse Digital | Digital Marketing Insights</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/net.jpg" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Circle that follows cursor -->
+    <div class="cursor-circle" id="cursorCircle"></div>
+
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Blog Hero Section -->
+    <section
+      class="blog-hero"
+      style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    >
+      <h1 class="fadeInZoom delay-0-3 text-white">
+        Digital Marketing Insights
+      </h1>
+      <p class="fadeInSlow delay-0-5 text-white">
+        Stay ahead of the curve with our latest articles, strategies, and
+        industry insights from the Netpulse Digital team.
+      </p>
+    </section>
+
+    <!-- Featured Post -->
+    <div class="blog-container">
+      <article class="featured-post wow fadeInUp" data-wow-delay="0.3s">
+        <div class="featured-content">
+          <span class="featured-badge pulse-animate">Featured Post</span>
+          <h2 class="fadeInLeftBounce delay-0-5">
+            The Future of Digital Marketing: AI-Powered Strategies for 2025
+          </h2>
+          <p class="fadeInSlow delay-0-7">
+            Discover how artificial intelligence is revolutionizing digital
+            marketing and learn the key strategies that will dominate 2025. From
+            personalized customer experiences to predictive analytics, explore
+            the cutting-edge tools and techniques that forward-thinking brands
+            are using to stay ahead of the competition.
+          </p>
+          <a href="blog-detail.html" class="read-more">Read Full Article</a>
+        </div>
+        <div class="featured-image">
+          <img
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=350&fit=crop"
+            alt="AI Digital Marketing"
+            class="float-animate img-fluid"
+          />
+        </div>
+      </article>
+
+      <!-- Categories -->
+      <div class="categories wow fadeInUp" data-wow-delay="0.5s">
+        <a class="category-tag">SEO Strategies</a>
+        <a class="category-tag">Social Media</a>
+        <a class="category-tag">Content Marketing</a>
+        <a class="category-tag">PPC Advertising</a>
+        <a class="category-tag">Web Development</a>
+        <a class="category-tag">Analytics</a>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <article class="blog-card wow fadeInUp" data-wow-delay="0.3s">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="SEO Optimization"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Aug 1, 2025</span>
+              <span><i class="far fa-user"></i> Amelia</span>
+            </div>
+            <h3>Advanced SEO Techniques That Drive Real Results</h3>
+            <p>
+              Learn the latest SEO strategies that go beyond basic optimization.
+              From technical SEO to content clustering, discover proven methods
+              to boost your search rankings and organic traffic.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card wow fadeInUp" data-wow-delay="0.5s">
+          <img
+            src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="Social Media Marketing"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jul 28, 2025</span>
+              <span><i class="far fa-user"></i> Donald Busri</span>
+            </div>
+            <h3>Social Media Trends Shaping Brand Engagement</h3>
+            <p>
+              Explore the latest social media trends and platforms that are
+              transforming how brands connect with their audiences. From
+              short-form video to community building strategies.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card wow fadeInUp" data-wow-delay="0.7s">
+          <img
+            src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="Content Strategy"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jul 25, 2025</span>
+              <span><i class="far fa-user"></i> Sami Adham</span>
+            </div>
+            <h3>Creating Content That Converts: A Complete Guide</h3>
+            <p>
+              Master the art of content creation with our comprehensive guide.
+              Learn how to craft compelling content that not only engages your
+              audience but drives conversions and builds brand loyalty.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card wow fadeInUp" data-wow-delay="0.9s">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="Data Analytics"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jul 22, 2025</span>
+              <span><i class="far fa-user"></i> Munns Tenul</span>
+            </div>
+            <h3>Data-Driven Marketing: Making Decisions That Matter</h3>
+            <p>
+              Unlock the power of data analytics in your marketing strategy.
+              Learn how to collect, analyze, and act on customer data to create
+              more effective campaigns and improve ROI.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card wow fadeInUp" data-wow-delay="1.1s">
+          <img
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="Web Design"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jul 20, 2025</span>
+              <span><i class="far fa-user"></i> Amelia</span>
+            </div>
+            <h3>Responsive Web Design: Best Practices for 2025</h3>
+            <p>
+              Stay current with the latest web design trends and best practices.
+              From mobile-first approaches to accessibility standards, create
+              websites that perform across all devices.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card wow fadeInUp" data-wow-delay="1.3s">
+          <img
+            src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=400&h=250&fit=crop"
+            class="img-fluid"
+            alt="PPC Advertising"
+          />
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jul 18, 2025</span>
+              <span><i class="far fa-user"></i> Donald Busri</span>
+            </div>
+            <h3>PPC Optimization Strategies That Maximize ROI</h3>
+            <p>
+              Transform your paid advertising campaigns with advanced PPC
+              optimization techniques. Learn how to reduce costs while
+              increasing conversions through strategic bidding and targeting.
+            </p>
+            <a href="blog-detail.html" class="read-more">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script>
+      // Animate blog cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }, index * 200);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all blog cards
+      document.querySelectorAll(".blog-card").forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(card);
+      });
+    </script>
+
+    <!-- Scripts -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/validnavs.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/cursor-circle.js"></script>
+  </body>
+</html>

@@ -15,18 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
               <i class="fa fa-bars"></i>
             </button>
             <a href="index.html">
-              <img src="assets/img/net.jpg" height="110px" />
+              <img src="assets/img/net.jpg" alt="logo" height="110px" />
             </a>
           </div>
           <div class="collapse navbar-collapse" id="navbar-menu">
-            <button
+           <button
               type="button"
-            class="navbar-toggle close-btn"
+              class="navbar-toggle close-btn"
               data-toggle="collapse"
               data-target="#navbar-menu"
+              aria-label="Close navigation menu"
             >
-              <i class="fa fa-times"></i>
-            </button>
+              <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
             <ul
               class="nav navbar-nav navbar-center"
               data-in="fadeInDown"
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="index.html" class="active">Home</a></li>
               <li><a href="about.html">About us</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>

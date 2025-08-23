@@ -722,13 +722,13 @@ img {
   text-align: center;
 }
 
-.services-items .info h4 a {
+.services-items .info h4{
   color: #222;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.services-items .info h4 a:hover {
+.services-items .info h4:hover {
   color: #764ba2;
 }
 

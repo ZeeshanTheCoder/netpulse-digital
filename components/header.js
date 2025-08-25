@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const headerHTML = `
-    <header>
       <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed dark no-background">
         <div class="container d-flex justify-content-between align-items-center">
           <div class="navbar-header">
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="overlay-screen"></div>
       </nav>
-    </header>
   `;
 
   const headerContainer = document.getElementById("header");

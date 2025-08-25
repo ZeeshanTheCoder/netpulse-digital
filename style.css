@@ -4288,6 +4288,28 @@ ul.list-check li::after {
   font-size: 10px;
 }
 
+
+/* ============================================================== 
+     # CTA
+=================================================================== */
+.cta-area {
+  background: linear-gradient(135deg, #4154f1, #5668ff);
+  color: #fff;
+}
+
+.cta-area .btn-light {
+  background-color: #fff;
+  color: #4154f1;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.cta-area .btn-light:hover {
+  background-color: #e4e4e4;
+  color: #2a37c9;
+}
+      
 /* ============================================================== 
      # Process
 =================================================================== */

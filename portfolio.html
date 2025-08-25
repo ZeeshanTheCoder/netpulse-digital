@@ -22,6 +22,70 @@
     <link href="assets/css/responsive.css" rel="stylesheet" />
     <link href="custom-styles.css" rel="stylesheet" />
     <style>
+      .custom-image-modal {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .custom-image-modal .modal-content {
+        width: auto;
+        max-height: 80vh;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #000;
+        animation: zoomIn 0.3s ease;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10001;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        background: none;
+        border: none;
+        font-size: 40px;
+        cursor: pointer;
+        z-index: 10001;
+      }
+
+      #prevImage {
+        left: 30px;
+      }
+
+      #nextImage {
+        right: 30px;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
       @keyframes fadeInUp {
         0% {
           opacity: 0;
@@ -383,7 +447,7 @@
         }
 
         .blog-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
           gap: 30px;
         }
 
@@ -412,6 +476,11 @@
       }
 
       @media (max-width: 480px) {
+        .blog-grid {
+          grid-template-columns: 2fr;
+          gap: 30px;
+        }
+
         .blog-hero h1 {
           font-size: 2rem;
         }
@@ -585,9 +654,9 @@
         <button
           class="border-0 category-tag filter-btn"
           style="cursor: pointer"
-          data-filter="mobile"
+          data-filter="ai"
         >
-          Mobile App
+          AI Automation
         </button>
         <button
           class="border-0 category-tag filter-btn"
@@ -596,10 +665,17 @@
         >
           Ebooks
         </button>
+        <button
+          class="border-0 category-tag filter-btn"
+          style="cursor: pointer"
+          data-filter="mobile"
+        >
+          Mobile App
+        </button>
       </div>
 
       <!-- Blog Grid -->
-      <div class="blog-grid">
+      <div class="flex blog-grid">
         <!-- Web -->
         <article
           class="blog-card wow fadeInUp"
@@ -734,6 +810,55 @@
           />
         </article>
 
+        <!-- AI Automation -->
+        <article
+          class="blog-card wow fadeInUp"
+          data-wow-delay="0.2s"
+          data-category="ai"
+        >
+          <img
+            src="assets/img/portfolio/ai1.jpg"
+            class="img-fluid"
+            alt="AI 1"
+          />
+        </article>
+
+        <article
+          class="blog-card wow fadeInUp"
+          data-wow-delay="0.3s"
+          data-category="ai"
+        >
+          <img
+            src="assets/img/portfolio/ai2.jpg"
+            class="img-fluid"
+            alt="AI 2"
+          />
+        </article>
+
+        <article
+          class="blog-card wow fadeInUp"
+          data-wow-delay="0.4s"
+          data-category="ai"
+        >
+          <img
+            src="assets/img/portfolio/ai3.png"
+            class="img-fluid"
+            alt="AI 3"
+          />
+        </article>
+
+        <article
+          class="blog-card wow fadeInUp"
+          data-wow-delay="0.4s"
+          data-category="ai"
+        >
+          <img
+            src="assets/img/portfolio/ai4.png"
+            class="img-fluid"
+            alt="AI 4"
+          />
+        </article>
+
         <!-- EBooks -->
         <article
           class="blog-card wow fadeInUp"
@@ -819,6 +944,13 @@
             alt="Mobile 4"
           />
         </article>
+        <!-- Image Modal -->
+        <div id="imageModal" class="custom-image-modal" style="display: none">
+          <span class="close-modal" id="closeModal">&times;</span>
+          <img class="modal-content" id="modalImage" />
+          <button id="prevImage" class="nav-btn">&#10094;</button>
+          <button id="nextImage" class="nav-btn">&#10095;</button>
+        </div>
       </div>
     </div>
 
@@ -896,6 +1028,63 @@
           filterButtons.forEach((btn) => btn.classList.remove("active"));
           button.classList.add("active");
         });
+      });
+
+      // portfolio image modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const closeModal = document.getElementById("closeModal");
+      const nextBtn = document.getElementById("nextImage");
+      const prevBtn = document.getElementById("prevImage");
+
+      let currentIndex = 0;
+      let visibleImages = [];
+
+      function updateVisibleImages() {
+        visibleImages = Array.from(document.querySelectorAll(".blog-card"))
+          .filter((card) => card.style.display !== "none")
+          .map((card) => card.querySelector("img"));
+      }
+
+      function showModal(index) {
+        const src = visibleImages[index].getAttribute("src");
+        modalImg.setAttribute("src", src);
+        modal.style.display = "flex";
+        currentIndex = index;
+      }
+
+      // Initialize image click handlers
+      document.querySelectorAll(".blog-card img").forEach((img) => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", (e) => {
+          e.preventDefault();
+          updateVisibleImages();
+          currentIndex = visibleImages.indexOf(e.target);
+          showModal(currentIndex);
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % visibleImages.length;
+        showModal(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+        showModal(currentIndex);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (modal.style.display === "flex") {
+          if (e.key === "Escape") modal.style.display = "none";
+          if (e.key === "ArrowRight") nextBtn.click();
+          if (e.key === "ArrowLeft") prevBtn.click();
+        }
       });
     </script>
 

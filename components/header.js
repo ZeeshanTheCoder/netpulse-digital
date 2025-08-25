@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <i class="fa fa-bars"></i>
             </button>
             <a href="index.html">
-              <img src="assets/img/net.jpg" alt="logo" height="110px" />
+              <img src="./assets/img/logo.png" alt="logo" height="110px" />
             </a>
           </div>
           <div class="collapse navbar-collapse" id="navbar-menu">

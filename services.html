@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="assets/img/net.jpg" type="image/x-icon" />
 
     <!-- Bootstrap CSS -->
-     <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
@@ -33,6 +33,10 @@
     <link href="assets/css/helper.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!-- Animate.css from CDN for guaranteed updated version and WOW.js -->
     <link
@@ -160,6 +164,7 @@
               style="
                 white-space: nowrap;
                 overflow: hidden;
+                font-size: 30px;
                 border-right: 3px solid #764ba2;
                 width: fit-content;
               "
@@ -319,108 +324,429 @@
           data-wow-duration="1s"
         />
       </div>
-     <div class="container">
-  <div
-    class="services-items wow animate__fadeInUp services-carousel owl-carousel owl-theme"
-    data-wow-duration="1s"
-    data-wow-delay="0.3s"
-  >
-    <!-- Digital Marketing -->
-    <div
-      class="item wow animate__animated animate__zoomIn animate__delay-1s"
-      data-wow-duration="1s"
-      data-wow-delay="0.2s"
-    >
-      <div class="icon"><i class="fas fa-bullhorn"></i></div>
-      <div class="info">
-        <h4><a href="/DigitalMarketing.html" style="color: #4154f1">Digital Marketing</a></h4>
-        <p>
-          We offer effective digital marketing strategies that are driven by results — including SEO and social media
-        </p>
-        <!-- Add button if you want like on home page, otherwise remove -->
-      </div>
-    </div>
+      <div class="container">
+        <div
+          class="services-items wow animate__fadeInUp services-carousel owl-carousel owl-theme"
+          data-wow-duration="1s"
+          data-wow-delay="0.3s"
+        >
+          <!-- Digital Marketing -->
+          <div
+            class="item wow animate__animated animate__zoomIn animate__delay-1s"
+            data-wow-duration="1s"
+            data-wow-delay="0.2s"
+          >
+            <div class="icon"><i class="fas fa-bullhorn"></i></div>
+            <div class="info">
+              <h4>
+                <a href="/DigitalMarketing.html" style="color: #4154f1"
+                  >Digital Marketing</a
+                >
+              </h4>
+              <p>
+                We offer effective digital marketing strategies that are driven
+                by results — including SEO and social media
+              </p>
+              <!-- Add button if you want like on home page, otherwise remove -->
+            </div>
+          </div>
 
-    <!-- Creative Designing -->
-    <div
-      class="item wow animate__animated animate__flipInY animate__delay-2s"
-      data-wow-duration="1s"
-      data-wow-delay="0.4s"
-    >
-      <div class="icon"><i class="fas fa-paint-brush"></i></div>
-      <div class="info">
-        <h4><a href="/Design.html" style="color: #4154f1">Creative Design</a></h4>
-        <p>
-          Our design team creates stunning and user-friendly design concepts that help bring your brand's message to life...
-        </p>
-      </div>
-    </div>
+          <!-- Creative Designing -->
+          <div
+            class="item wow animate__animated animate__flipInY animate__delay-2s"
+            data-wow-duration="1s"
+            data-wow-delay="0.4s"
+          >
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="info">
+              <h4>
+                <a href="/Design.html" style="color: #4154f1"
+                  >Creative Design</a
+                >
+              </h4>
+              <p>
+                Our design team creates stunning and user-friendly design
+                concepts that help bring your brand's message to life...
+              </p>
+            </div>
+          </div>
 
-    <!-- Web Development -->
-    <div
-      class="item wow animate__animated animate__fadeInRightBig animate__delay-3s"
-      data-wow-duration="1s"
-      data-wow-delay="0.6s"
-    >
-      <div class="icon"><i class="fas fa-code"></i></div>
-      <div class="info">
-        <h4><a href="/Web.html" style="color: #4154f1">Web Development</a></h4>
-        <p>
-          Our web development team creates quick, mobile-responsive, and flexible websites tailored to your company's objectives...
-        </p>
-      </div>
-    </div>
+          <!-- Web Development -->
+          <div
+            class="item wow animate__animated animate__fadeInRightBig animate__delay-3s"
+            data-wow-duration="1s"
+            data-wow-delay="0.6s"
+          >
+            <div class="icon"><i class="fas fa-code"></i></div>
+            <div class="info">
+              <h4>
+                <a href="/Web.html" style="color: #4154f1">Web Development</a>
+              </h4>
+              <p>
+                Our web development team creates quick, mobile-responsive, and
+                flexible websites tailored to your company's objectives...
+              </p>
+            </div>
+          </div>
 
-    <!-- AI Automation -->
-    <div
-      class="item wow animate__animated animate__lightSpeedInRight animate__delay-4s"
-      data-wow-duration="1s"
-      data-wow-delay="0.8s"
-    >
-      <div class="icon"><i class="fas fa-robot"></i></div>
-      <div class="info">
-        <h4><a href="/AIAutomation.html" style="color: #4154f1">AI Automation</a></h4>
-        <p>
-          Streamline your business operations with smart AI automation tools designed to boost efficiency and accuracy.
-        </p>
-      </div>
-    </div>
+          <!-- AI Automation -->
+          <div
+            class="item wow animate__animated animate__lightSpeedInRight animate__delay-4s"
+            data-wow-duration="1s"
+            data-wow-delay="0.8s"
+          >
+            <div class="icon"><i class="fas fa-robot"></i></div>
+            <div class="info">
+              <h4>
+                <a href="/AIAutomation.html" style="color: #4154f1"
+                  >AI Automation</a
+                >
+              </h4>
+              <p>
+                Streamline your business operations with smart AI automation
+                tools designed to boost efficiency and accuracy.
+              </p>
+            </div>
+          </div>
 
-    <!-- E-Books -->
-    <div
-      class="item wow animate__animated animate__fadeInRightBig animate__delay-5s"
-      data-wow-duration="1s"
-      data-wow-delay="1s"
-    >
-      <div class="icon"><i class="fas fa-book"></i></div>
-      <div class="info">
-        <h4><a href="/EBooks.html" style="color: #4154f1">E-Books</a></h4>
-        <p>
-          Discover our professionally crafted e-books that deliver valuable insights and practical guidance for all readers.
-        </p>
-      </div>
-    </div>
+          <!-- E-Books -->
+          <div
+            class="item wow animate__animated animate__fadeInRightBig animate__delay-5s"
+            data-wow-duration="1s"
+            data-wow-delay="1s"
+          >
+            <div class="icon"><i class="fas fa-book"></i></div>
+            <div class="info">
+              <h4><a href="/EBooks.html" style="color: #4154f1">E-Books</a></h4>
+              <p>
+                Discover our professionally crafted e-books that deliver
+                valuable insights and practical guidance for all readers.
+              </p>
+            </div>
+          </div>
 
-    <!-- Mobile Application Development -->
-    <div
-      class="item wow animate__animated animate__fadeInRightBig animate__delay-6s"
-      data-wow-duration="1s"
-      data-wow-delay="1.2s"
-    >
-      <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-      <div class="info">
-        <h4><a href="/MobileApp.html" style="color: #4154f1">Mobile Application Development</a></h4>
-        <p>
-          We build powerful mobile app with intuitive interfaces for both Android and iOS platforms.
-        </p>
+          <!-- Mobile Application Development -->
+          <div
+            class="item wow animate__animated animate__fadeInRightBig animate__delay-6s"
+            data-wow-duration="1s"
+            data-wow-delay="1.2s"
+          >
+            <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="info">
+              <h4>
+                <a href="/MobileApp.html" style="color: #4154f1"
+                  >Mobile Application Development</a
+                >
+              </h4>
+              <p>
+                We build powerful mobile app with intuitive interfaces for both
+                Android and iOS platforms.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
     </div>
 
     <!-- End Services Area -->
+
+    <div class="features-area default-padding-bottom mx-2 mx-sm-0 pb-0">
+      <div class="container m-0 m-sm-auto">
+        <div class="features-items">
+          <div class="feature-box text-center">
+            <div class="d-flex justify-content-between -items-center">
+              <h3>Our Services</h3>
+              <a href="/contact.html" style="text-decoration: none">
+                <button
+                  style="
+                    background-color: #4154f1;
+                    color: white;
+                    padding: 12px 24px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                  "
+                >
+                  Get Started
+                </button>
+              </a>
+            </div>
+            <!-- Swiper Slider Start -->
+            <div class="swiper myFeatureSwiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-bullhorn"></i></div>
+                    <h4>Digital Marketing</h4>
+                    <p class="pb-3">
+                      We offer effective digital marketing strategies that are
+                      driven by results — including SEO and social media
+                    </p>
+                    <a
+                      href="./DigitalMarketing.html"
+                      style="text-decoration: none"
+                    >
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                    <h4>Creative Design</h4>
+                    <p class="pb-3">
+                      Our design team creates stunning and user-friendly design
+                      concepts that help bring your brand's message to life...
+                    </p>
+                    <a href="./Design.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h4>Web Development</h4>
+                    <p class="pb-3">
+                      Our web development team creates quick, mobile-responsive,
+                      and flexible websites tailored to your company's
+                      objectives...
+                    </p>
+                    <a href="./Web.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <h4>AI Automation</h4>
+                    <p class="pb-3">
+                      Streamline your business operations with smart AI
+                      automation tools designed to boost efficiency and
+                      accuracy.
+                    </p>
+                    <a href="./AIAutomation.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(142, 68, 173, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-book"></i></div>
+                    <h4>E-Books</h4>
+                    <p class="pb-3">
+                      Discover our professionally crafted e-books that deliver
+                      valuable insights and practical guidance for all readers.
+                    </p>
+                    <a href="./EBooks.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(255, 152, 0, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide single-item">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Mobile Application Development</h4>
+                    <p class="pb-3">
+                      We build powerful mobile app with intuitive interfaces for
+                      both Android and iOS platforms.
+                    </p>
+                    <a href="./MobileApp.html" style="text-decoration: none">
+                      <button
+                        style="
+                          color: white;
+                          padding: 12px 28px;
+                          border: none;
+                          border-radius: 8px;
+                          font-size: 16px;
+                          font-weight: 600;
+                          cursor: pointer;
+                          box-shadow: 0 4px 8px rgba(59, 89, 152, 0.4);
+                          transition: background-color 0.3s ease,
+                            box-shadow 0.3s ease;
+                        "
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Swiper Slider End -->
+          </div>
+          <!-- Swiper Navigation and Pagination -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".myFeatureSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: false,
+        autoplay: {
+          delay: 3000, // 3000ms = 3 seconds
+          disableOnInteraction: false, // keep autoplay active even after user swipes
+        },
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+
+    <!-- Optional Custom Styling -->
+    <style>
+      .swiper {
+        padding: 40px 0;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        height: auto;
+      }
+      .item {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        max-width: 350px;
+        width: 100%;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        padding: 12px;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #4154f1;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 24px;
+      }
+
+      .swiper-button-prev {
+        left: 10px;
+      }
+      .swiper-button-next {
+        right: 10px;
+      }
+    </style>
 
     <!-- Fun Factor Area -->
     <div class="fun-factor-area relative" style="margin-bottom: -40px">
@@ -428,43 +754,43 @@
         <div class="client-items text-center">
           <div class="row">
             <div
-              class="col-lg-3 col-md-6 item wow animate__fadeInUp"
+              class="col-lg-3 col-md-6 fun-item pb-5 pb-sm-0 wow animate__fadeInUp"
               data-wow-duration="1s"
               data-wow-delay="0.3s"
             >
               <div class="fun-fact">
                 <div class="timer" data-to="687" data-speed="5000">687</div>
-                <span class="medium">Projects Executed</span>
+                <span class="medium fw-bold text-black">Projects Executed</span>
               </div>
             </div>
             <div
-              class="col-lg-3 col-md-6 item wow animate__fadeInUp"
+              class="col-lg-3 col-md-6 fun-item pb-5 pb-sm-0 wow animate__fadeInUp"
               data-wow-duration="1s"
               data-wow-delay="0.5s"
             >
               <div class="fun-fact">
                 <div class="timer" data-to="2348" data-speed="5000">2348</div>
-                <span class="medium">Data Analytics</span>
+                <span class="medium fw-bold text-black">Data Analytics</span>
               </div>
             </div>
             <div
-              class="col-lg-3 col-md-6 item wow animate__fadeInUp"
+              class="col-lg-3 col-md-6 fun-item pb-5 pb-sm-0 wow animate__fadeInUp"
               data-wow-duration="1s"
               data-wow-delay="0.7s"
             >
               <div class="fun-fact">
                 <div class="timer" data-to="450" data-speed="5000">450</div>
-                <span class="medium">Data Management</span>
+                <span class="medium fw-bold text-black">Data Management</span>
               </div>
             </div>
             <div
-              class="col-lg-3 col-md-6 item wow animate__fadeInUp"
+              class="col-lg-3 col-md-6 fun-item pb-5 pb-sm-0 wow animate__fadeInUp"
               data-wow-duration="1s"
               data-wow-delay="0.9s"
             >
               <div class="fun-fact">
                 <div class="timer" data-to="1200" data-speed="5000">1200</div>
-                <span class="medium">Satisfied Customers</span>
+                <span class="medium fw-bold text-black">Satisfied Customers</span>
               </div>
             </div>
           </div>

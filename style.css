@@ -4926,7 +4926,7 @@ ul.list-check li::after {
   opacity: 0.8;
 }
 
-.fun-factor-area .item .timer {
+.fun-factor-area .fun-item .timer {
   display: block;
   font-size: 60px;
   font-weight: 700;

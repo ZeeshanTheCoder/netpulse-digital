@@ -50,15 +50,25 @@
       </p>
     <![endif]-->
     <style>
-      .background-video {
+      .banner-area {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .video-container {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        opacity: 0.5; /* Lower opacity makes video less prominent */
         z-index: 0;
+      }
+
+      .background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
       }
 
       .video-dark-overlay {
@@ -67,8 +77,23 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: #fff;
+        opacity: 0.2;
         z-index: 1;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (max-width: 768px) {
+        .background-video {
+          height: 80vh;
+        }
+        .banner-area {
+          height: 80vh;
+        }
       }
     </style>
   </head>
@@ -94,12 +119,13 @@
       <!-- <div class="shape-right-bottom shape opacity-default">
         <img src="assets/img/shape/13.png" alt="Shape" />
       </div> -->
-      <video autoplay muted loop playsinline class="background-video">
-        <source src="./assets/video/bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div class="video-dark-overlay"></div>
+      <div class="video-container">
+        <video autoplay muted loop playsinline class="background-video">
+          <source src="./assets/video/video5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-dark-overlay"></div>
+      </div>
 
       <div class="container">
         <div class="double-items">
@@ -109,7 +135,6 @@
                 id="typewriter"
                 class="wow fadeInDown"
                 data-wow-duration="1s"
-                style="font-size: 55px"
               ></h2>
               <p
                 class="wow fadeInLeft text-black"
@@ -120,17 +145,10 @@
                   font-family: Plus Jakarta Sans, sans-serif;
                 "
               >
-                From eye-catching creative design and high-performance web &
-                mobile app development to intelligent AI automation,
-                result-oriented digital marketing strategies, and immersive
-                eBook design and publishing — we empower businesses to grow,
-                innovate, and thrive in the digital landscape. Our team blends
-                technology with creativity to deliver seamless digital
-                experiences that captivate audiences, boost engagement, and
-                drive measurable success. Whether you're launching a startup or
-                scaling an enterprise, we help you build a powerful online
-                presence, automate operations, and drive traffic where it
-                matters most. Let’s transform your vision into impact.
+                From striking creative design and seamless web & app development
+                to results-driven digital marketing, intelligent chatbots, and
+                captivating eBook design and publishing — we help your business
+                grow and drive traffic where it matters most.
               </p>
             </div>
             <!-- <div class="col-lg-6 thumb wow fadeInRight" data-wow-duration="1s">
@@ -141,11 +159,11 @@
       </div>
     </div>
 
-    <div class="features-area default-padding-bottom m-5">
-      <div class="container">
+    <div class="features-area default-padding-bottom mt-5 mx-2 mx-sm-0">
+      <div class="container m-0 m-sm-auto">
         <div class="features-items">
           <div class="feature-box text-center">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between -items-center">
               <h3>Our Services</h3>
               <a href="/services.html" style="text-decoration: none">
                 <button
@@ -375,7 +393,7 @@
         spaceBetween: 30,
         loop: false,
         autoplay: {
-          delay: 7000, // 3000ms = 3 seconds
+          delay: 3000, // 3000ms = 3 seconds
           disableOnInteraction: false, // keep autoplay active even after user swipes
         },
 
@@ -954,10 +972,10 @@
     </section>
 
     <!-- Blog -->
-    <div class="blog-area bottom-less bg-gray" style="padding: 50px">
+    <div class="blog-area bottom-less bg-gray p-0 p-lg-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 offset-lg-2">
+          <div class="col-lg-8 offset-lg-2 mt-5 mt-lg-0">
             <div class="site-heading text-center" style="margin-bottom: 20px">
               <h4 style="margin-bottom: 5px">Latest News</h4>
               <h2 style="margin-bottom: 10px">
